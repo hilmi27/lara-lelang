@@ -36,6 +36,26 @@ Route::prefix('admin')->group(function() {
 
 Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
 
+// Manage Staff
+Route::get('staff','StaffController@index')->name('admin.staff');
+
+Route::get('staff/create','StaffController@create')->name('admin.staff.create');
+
+Route::post('staff/create','staffController@store')->name('admin.staff.store');
+
+Route::get('staff/edit/{id}','StaffController@edit')->name('admin.staff.edit');
+
+Route::post('staff/edit/{id}','StaffController@update')->name('admin.staff.update');
+
+Route::delete('staff/destroy/{id}','StaffController@destroy')->name('admin.staff.destroy');
+
+Route::get('staff/trash','StaffController@trash')->name('admin.staff.trash');
+
+Route::post('staff/{id}/restore','StaffController@restore')->name('admin.staff.restore');
+
+Route::delete('staff/{id}/delete-permanent','StaffController@deletePermanent')->name('admin.staff.delete-permanent');
+
+
 // Manage Wilayah Penangkapan
 Route::get('wilayah-penangkapan','WilayahController@index')->name('admin.wilayah');
 

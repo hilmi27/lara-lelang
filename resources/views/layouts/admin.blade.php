@@ -281,7 +281,7 @@
                                 </ul>
       
                             </li>   
-      
+
                             <li class="nav-item has-treeview">
       
                                 <a href="#" class="nav-link">
@@ -290,7 +290,7 @@
       
                                     <p>
       
-                                        Data User
+                                        Data staff
       
                                         <i class="fas fa-angle-left right"></i>
       
@@ -302,11 +302,11 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                        <a href="{{ route('admin.staff') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       
-                                            <p>Pembeli</p>
+                                            <p>Data</p>
       
                                         </a>
       
@@ -314,11 +314,11 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/mailbox/compose.html" class="nav-link">
+                                        <a href="{{ route('admin.staff.trash') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       
-                                            <p>staff</p>
+                                            <p>Trash</p>
       
                                         </a>
       
@@ -374,7 +374,6 @@
      
                             </li>
      
-      
                             <br>
       
                             <li class="nav-item">
@@ -391,7 +390,7 @@
       
                                 </a>
       
-                            </li>
+                            </li> 
 
                         </ul>
 

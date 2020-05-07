@@ -25,6 +25,7 @@ class CreateAdminsTable extends Migration
             $table->enum("role", ["Administrator", "Watcher", "Operator"]);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
