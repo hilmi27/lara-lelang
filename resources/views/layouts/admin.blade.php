@@ -210,7 +210,7 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/forms/general.html" class="nav-link">
+                                        <a href="{{ route('admin.nelayan') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       
@@ -222,7 +222,7 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/forms/advanced.html" class="nav-link">
+                                        <a href="{{ route('admin.nelayan.trash') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       
@@ -360,7 +360,7 @@
      
                                     <li class="nav-item">
      
-                                        <a href="pages/charts/flot.html" class="nav-link">
+                                        <a href="{{ route('admin.wilayah') }}" class="nav-link">
      
                                             <i class="far fa-circle nav-icon"></i>
      
