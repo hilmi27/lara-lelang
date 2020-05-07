@@ -31,4 +31,10 @@ Route::get('jenis-ikan/create','JenisikanController@create')->name('admin.jenisi
 
 Route::post('jenis-ikan/create','JenisikanController@store')->name('admin.jenisikan.store');
 
+Route::get('jenis-ikan/edit/{id}','JenisikanController@edit')->name('admin.jenisikan.edit');
+
+Route::post('jenis-ikan/edit/{id}','JenisikanController@update')->name('admin.jenisikan.update');
+
+Route::delete('jenis-ikan/{id}/destroy','JenisikanController@destroy')->name('admin.jenisikan.destroy');
+
 });

@@ -54,6 +54,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+      <!-- DataTables -->
+  
+      <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+  
+      <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+
     @yield('style')
 
 </head>
@@ -135,52 +141,6 @@
                                     </p>
      
                                 </a>
-     
-                            </li>
-     
-                            <li class="nav-item has-treeview">
-     
-                                <a href="#" class="nav-link">
-     
-                                    <i class="nav-icon fas fa-chart-pie"></i>
-     
-                                    <p>
-     
-                                        Data Jenis Ikan
-     
-                                        <i class="right fas fa-angle-left"></i>
-     
-                                    </p>
-     
-                                </a>
-     
-                                <ul class="nav nav-treeview">
-     
-                                    <li class="nav-item">
-     
-                                        <a href="{{ route('admin.jenisikan') }}" class="nav-link">
-     
-                                            <i class="far fa-circle nav-icon"></i>
-     
-                                            <p>Data</p>
-     
-                                        </a>
-     
-                                    </li>
-     
-                                    <li class="nav-item">
-     
-                                        <a href="pages/charts/flot.html" class="nav-link">
-     
-                                            <i class="far fa-circle nav-icon"></i>
-     
-                                            <p>Trash</p>
-     
-                                        </a>
-     
-                                    </li>
-     
-                                </ul>
      
                             </li>
      
@@ -367,6 +327,53 @@
                                 </ul>
       
                             </li>
+
+                            <li class="nav-item has-treeview">
+     
+                                <a href="#" class="nav-link">
+     
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+     
+                                    <p>
+     
+                                        Data Master
+     
+                                        <i class="right fas fa-angle-left"></i>
+     
+                                    </p>
+     
+                                </a>
+     
+                                <ul class="nav nav-treeview">
+     
+                                    <li class="nav-item">
+     
+                                        <a href="{{ route('admin.jenisikan') }}" class="nav-link">
+     
+                                            <i class="far fa-circle nav-icon"></i>
+     
+                                            <p>Jenis Ikan</p>
+     
+                                        </a>
+     
+                                    </li>
+     
+                                    <li class="nav-item">
+     
+                                        <a href="pages/charts/flot.html" class="nav-link">
+     
+                                            <i class="far fa-circle nav-icon"></i>
+     
+                                            <p>Wilayah Penangkapan</p>
+     
+                                        </a>
+     
+                                    </li>
+     
+                                </ul>
+     
+                            </li>
+     
       
                             <br>
       
@@ -499,6 +506,34 @@
         <!-- AdminLTE for demo purposes -->
 
         <script src="{{ asset('admin/dist/js/demo.js') }}"></script>
+
+        <!-- DataTables -->
+
+        <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+
+        <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+        <script src="{{ asset('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+
+        <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+
+        <script>
+            $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            });
+        </script>
 
         @yield('script')
 

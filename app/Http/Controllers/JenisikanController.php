@@ -72,7 +72,8 @@ class JenisikanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jenisikan = Jenisikan::findOrFail($id);
+        return view('admin.jenisikan.edit',compact('jenisikan'));
     }
 
     /**
@@ -84,7 +85,15 @@ class JenisikanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $jenisikan = Jenisikan::findOrFail($id);
+        $jenisikan->name = $request->name;
+
+        if ($jenisikan->save()) {
+            return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil diupdate');
+        } else {
+            return redirect()->back()->with('error','Data gagal ditambahkan');
+        }
+        
     }
 
     /**
@@ -95,6 +104,10 @@ class JenisikanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jenisikan = Jenisikan::findOrFail($id);
+        
+        $jenisikan->delete();
+
+       return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil dihapus');
     }
 }
