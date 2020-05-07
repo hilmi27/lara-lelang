@@ -112,7 +112,7 @@
 
                     <div class="info">
 
-                        <a href="#" class="d-block">Admin</a>
+                        <a href="#" class="d-block">{{ Auth::guard('admin')->user()->name }}</a>
 
                     </div>
 
@@ -379,7 +379,7 @@
       
                             <li class="nav-item">
       
-                                <a href="pages/gallery.html" class="nav-link">
+                                <a href="{{ route('admin.logout') }}" class="nav-link">
       
                                     <i class="nav-icon far fa-image"></i>
       

@@ -21,6 +21,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+// Admin
+
+Route::get('admin/login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
+
+Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
+
+Route::get('admin/logout','Auth\AdminAuthController@postLogout')->name('admin.logout');
+
+Route::middleware('auth:admin')->group(function(){
+
 Route::prefix('admin')->group(function() {
 
 Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
@@ -71,5 +82,7 @@ Route::post('nelayan/{id}/restore','NelayanController@restore')->name('admin.nel
 
 Route::delete('nelayan/{id}/delete-permanent','NelayanController@deletePermanent')->name('admin.nelayan.delete-permanent');
 
+
+});
 
 });
