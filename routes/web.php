@@ -83,6 +83,26 @@ Route::post('jenis-ikan/edit/{id}','JenisikanController@update')->name('admin.je
 
 Route::delete('jenis-ikan/{id}/destroy','JenisikanController@destroy')->name('admin.jenisikan.destroy');
 
+// Manage Data Ikan
+Route::get('data-ikan','IkanController@index')->name('admin.ikan');
+
+Route::get('data-ikan/create','IkanController@create')->name('admin.ikan.create');
+
+Route::post('data-ikan/create','IkanController@store')->name('admin.ikan.store');
+
+Route::get('data-ikan/edit/{id}','IkanController@edit')->name('admin.ikan.edit');
+
+Route::post('data-ikan/edit/{id}','IkanController@update')->name('admin.ikan.update');
+
+Route::delete('data-ikan/destroy/{id}','IkanController@destroy')->name('admin.ikan.destroy');
+
+Route::get('data-ikan/trash','IkanController@trash')->name('admin.ikan.trash');
+
+Route::post('data-ikan/{id}/restore','IkanController@restore')->name('admin.ikan.restore');
+
+Route::delete('data-ikan/{id}/delete-permanent','IkanController@deletePermanent')->name('admin.ikan.delete-permanent');
+
+
 // Manage Data Nelayan
 Route::get('nelayan','NelayanController@index')->name('admin.nelayan');
 
