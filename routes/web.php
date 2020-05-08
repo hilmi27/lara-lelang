@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','FrontController@home')->name('front');
 
 Auth::routes();
 
@@ -122,6 +124,20 @@ Route::post('nelayan/{id}/restore','NelayanController@restore')->name('admin.nel
 
 Route::delete('nelayan/{id}/delete-permanent','NelayanController@deletePermanent')->name('admin.nelayan.delete-permanent');
 
+
+// Setting
+// Banner Slider
+Route::get('banner-slider','BannersliderController@index')->name('admin.banner');
+
+Route::get('banner-slider/create','BannersliderController@create')->name('admin.banner.create');
+
+Route::post('banner-slider/create','BannersliderController@store')->name('admin.banner.store');
+
+Route::get('banner-slider/edit/{id}','BannersliderController@edit')->name('admin.banner.edit');
+
+Route::post('banner-slider/edit/{id}','BannersliderController@update')->name('admin.banner.update');
+
+Route::delete('banner-slider/destroy/{id}','BannersliderController@destroy')->name('admin.banner.destroy');
 
 });
 

@@ -373,6 +373,52 @@
                                 </ul>
      
                             </li>
+
+                            <li class="nav-item has-treeview">
+     
+                                <a href="#" class="nav-link">
+     
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+     
+                                    <p>
+     
+                                        Setting
+     
+                                        <i class="right fas fa-angle-left"></i>
+     
+                                    </p>
+     
+                                </a>
+     
+                                <ul class="nav nav-treeview">
+     
+                                    <li class="nav-item">
+     
+                                        <a href="{{ route('admin.banner') }}" class="nav-link">
+     
+                                            <i class="far fa-circle nav-icon"></i>
+     
+                                            <p>Banner Slider</p>
+     
+                                        </a>
+     
+                                    </li>
+     
+                                    <li class="nav-item">
+     
+                                        <a href="{{ route('admin.wilayah') }}" class="nav-link">
+     
+                                            <i class="far fa-circle nav-icon"></i>
+     
+                                            <p>Wilayah Penangkapan</p>
+     
+                                        </a>
+     
+                                    </li>
+     
+                                </ul>
+     
+                            </li>
      
                             <br>
       
