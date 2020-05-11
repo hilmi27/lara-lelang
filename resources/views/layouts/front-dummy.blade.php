@@ -60,20 +60,17 @@
 								<a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
 							</div>
 							<ul>
-								<li class="submenu">
-									<a href="javascript:void(0);" class="show-submenu">Home</a>
-									
-								</li>
-								
-								<li class="submenu">
-									<a href="javascript:void(0);" class="show-submenu">Extra Pages</a>
-									
+								<li>
+									<a href="blog.html">Home</a>
 								</li>
 								<li>
-									<a href="blog.html">Blog</a>
+									<a href="#0">About</a>
 								</li>
 								<li>
-									<a href="#0">Buy Template</a>
+									<a href="#0">Lelang</a>
+								</li>
+								<li>
+									<a href="#0">Contact</a>
 								</li>
 							</ul>
 						</div>
@@ -82,7 +79,7 @@
 					<div class="col-xl-3 col-lg-2 d-lg-flex align-items-center justify-content-end text-right">
 						{{-- <a class="phone_top" href="tel://9438843343"><strong><span>Need Help?</span>+94 423-23-221</strong></a> --}}
                         <ul class="top_tools">
-							<li>
+							{{-- <li>
 								<div class="dropdown dropdown-cart">
 									<a href="cart.html" class="cart_bt"><strong>2</strong></a>
 									<div class="dropdown-menu">
@@ -112,7 +109,7 @@
 							</li>
 							<li>
 								<a href="#0" class="wishlist"><span>Wishlist</span></a>
-							</li>
+							</li> --}}
 							<li>
 								<div class="dropdown dropdown-access">
 									<a href="account.html" class="access_link"><span>Account</span></a>

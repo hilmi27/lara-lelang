@@ -112,7 +112,7 @@
 
                     <div class="info">
 
-                        <a href="#" class="d-block">{{ Auth::guard('admin')->user()->name }}</a>
+                        {{-- <a href="#" class="d-block">{{ Auth::guard('admin')->user()->name }}</a> --}}
 
                     </div>
 
@@ -406,11 +406,11 @@
      
                                     <li class="nav-item">
      
-                                        <a href="{{ route('admin.wilayah') }}" class="nav-link">
+                                        <a href="{{ route('admin.generalsetting') }}" class="nav-link">
      
                                             <i class="far fa-circle nav-icon"></i>
      
-                                            <p>Wilayah Penangkapan</p>
+                                            <p>General</p>
      
                                         </a>
      

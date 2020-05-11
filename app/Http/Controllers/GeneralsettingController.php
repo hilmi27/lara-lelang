@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Generalsetting;
+
 class GeneralsettingController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class GeneralsettingController extends Controller
      */
     public function index()
     {
-        //
+        $gs = Generalsetting::orderBy('id','desc')->get();
+
+        return view('admin.general.index',compact('gs'));
     }
 
     /**
@@ -56,7 +60,9 @@ class GeneralsettingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gs = Generalsetting::findOrFail($id);
+
+        return view('admin.general.edit',compact('gs'));
     }
 
     /**
@@ -68,7 +74,112 @@ class GeneralsettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         \Validator::make($request->all(), [
+            "favicon"=> "required",
+            "logo" => "required",
+            "banner_mid" => "required",
+            "bg_title" => "required",
+            "title" => "required|max:50",       
+        ])->validate();
+
+        $gs = Generalsetting::findOrFail($id);
+        
+        $gs->title = $request->title;
+        $gs->address = $request->address;
+        $gs->phone = $request->phone;
+        $gs->email = $request->email;
+        $gs->link_fb = $request->link_fb;
+        $gs->link_tw = $request->link_tw;
+        $gs->link_ig = $request->link_ig;
+        $gs->link_web = $request->link_web;
+        $gs->maps = $request->maps;
+        $gs->footer = $request->footer;
+       
+       if ($file = $request->file('favicon')) 
+
+       {              
+
+            $name = "favicon-".time().$file->getClientOriginalName();
+
+            $file->move('admin/gs',$name);   
+
+            if($gs->favicon != null)
+            {
+               if (file_exists(public_path().'admin/gs/'.$gs->favicon)) {
+                   unlink(public_path().'admin/gs/'.$gs->favicon);
+               }
+            }           
+
+           $gs['favicon'] = $name;
+
+       } 
+
+       if ($file = $request->file('logo')) 
+
+       {              
+
+            $name = "logo-".time().$file->getClientOriginalName();
+
+            $file->move('admin/gs',$name);   
+
+            if($gs->logo != null)
+            {
+               if (file_exists(public_path().'admin/gs/'.$gs->logo)) {
+                   unlink(public_path().'admin/gs/'.$gs->logo);
+               }
+            }           
+
+           $gs['logo'] = $name;
+
+       } 
+
+       if ($file = $request->file('banner_mid')) 
+
+       {              
+
+            $name = "banner_mid-".time().$file->getClientOriginalName();
+
+            $file->move('admin/gs',$name);   
+
+            if($gs->banner_mid != null)
+            {
+               if (file_exists(public_path().'admin/gs/'.$gs->banner_mid)) {
+                   unlink(public_path().'admin/gs/'.$gs->banner_mid);
+               }
+            }           
+
+           $gs['banner_mid'] = $name;
+
+       } 
+
+       if ($file = $request->file('bg_title')) 
+
+       {              
+
+            $name = "bg_title-".time().$file->getClientOriginalName();
+
+            $file->move('admin/gs',$name);   
+
+            if($gs->bg_title != null)
+            {
+               if (file_exists(public_path().'admin/gs/'.$gs->bg_title)) {
+                   unlink(public_path().'admin/gs/'.$gs->bg_title);
+               }
+            }           
+
+           $gs['bg_title'] = $name;
+
+       } 
+
+        if ($gs->save()) {
+
+            return redirect()->route('admin.generalsetting')->with('success','Data general berhasil diupdate');
+    
+        } else {
+    
+            return redirect()->back()->with('error','Data gagal diupdate');
+    
+        }
     }
 
     /**

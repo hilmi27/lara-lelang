@@ -55,7 +55,7 @@
   <form role="form" action="{{ route('admin.jenisikan.store') }}" method="POST" >
 
     @csrf
-
+    
     <div class="card-body">
 
       <div class="form-group">

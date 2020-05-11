@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Jenisikan;
 
+use PDF;
+
 class JenisikanController extends Controller
 {
     /**
@@ -41,6 +43,7 @@ class JenisikanController extends Controller
 
        $jenisikan->name = $request->name;
 
+    //    dd($jenisikan);
        if ($jenisikan->save()) {
 
         return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil ditambahkan');
@@ -110,4 +113,5 @@ class JenisikanController extends Controller
 
        return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil dihapus');
     }
+
 }

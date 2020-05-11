@@ -17,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/','FrontController@home')->name('front');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
+Route::get('/','FrontController@home')->name('front');
+
+Route::get('contact','FrontController@contact')->name('front.contact');
+
+Route::get('lelang','FrontController@lelang')->name('front.lelang');
 
 // Admin
 
@@ -32,7 +37,7 @@ Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
 
 Route::get('admin/logout','Auth\AdminAuthController@postLogout')->name('admin.logout');
 
-Route::middleware('auth:admin')->group(function(){
+// Route::middleware('auth:admin')->group(function(){
 
 Route::prefix('admin')->group(function() {
 
@@ -74,6 +79,8 @@ Route::delete('wilayah-pengkapan/{id}/destroy','WilayahController@destroy')->nam
 // Manage Jenis Ikan
 
 Route::get('jenis-ikan','JenisikanController@index')->name('admin.jenisikan');
+
+Route::get('jenis-ikan/print','JenisikanController@print')->name('admin.jenisikan.print');
 
 Route::get('jenis-ikan/create','JenisikanController@create')->name('admin.jenisikan.create');
 
@@ -139,6 +146,13 @@ Route::post('banner-slider/edit/{id}','BannersliderController@update')->name('ad
 
 Route::delete('banner-slider/destroy/{id}','BannersliderController@destroy')->name('admin.banner.destroy');
 
-});
+// General Setting
+Route::get('general-setting','GeneralsettingController@index')->name('admin.generalsetting');
+
+Route::get('general-setting/edit/{id}','GeneralsettingController@edit')->name('admin.generalsetting.edit');
+
+Route::post('general-setting/edit/{id}','GeneralsettingController@update')->name('admin.generalsetting.update');
 
 });
+
+// });

@@ -41,6 +41,8 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="{{ asset('front/css/custom.css') }}" rel="stylesheet">
 
+    @yield('style')
+
 </head>
 
 <body>
@@ -61,7 +63,10 @@
 
                         <div id="logo">
 
-                            <a href="index.html"><img src="{{ asset('front/img/logo.svg') }}" alt="" width="100" height="35"></a>
+                            <a href="{{ route('front') }}">
+                                {{-- <img src="{{ asset('front/img/logo.svg') }}" alt="" width="100" height="35"> --}}
+                                <h3 style="color: white">Lelang</h3>
+                            </a>
 
                         </div>
 
@@ -89,7 +94,9 @@
 
                             <div id="header_menu">
 
-                                <a href="index.html"><img src="{{ asset('img/logo_black.svg') }}" alt="" width="100" height="35"></a>
+                                <a href="{{ route('front') }}">
+                                    <img src="{{ asset('img/logo_black.svg') }}" alt="" width="100" height="35">
+                                </a>
 
                                 <a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
 
@@ -97,27 +104,27 @@
 
                             <ul>
 
-                                <li class="submenu">
+                                <li>
+                
+                                    <a href="{{ route('front') }}">Home</a>
+                
+                                </li>
 
-                                    <a href="javascript:void(0);" class="show-submenu">Home</a>									
-                
-                                </li>
-								
-								<li class="submenu">
-                
-                                    <a href="javascript:void(0);" class="show-submenu">Extra Pages</a>
-									
-								</li>
-                
                                 <li>
                 
-                                    <a href="blog.html">Blog</a>
+                                    <a href="#">About</a>
                 
                                 </li>
                 
                                 <li>
                 
-                                    <a href="#0">Buy Template</a>
+                                    <a href="{{ route('front.lelang') }}">Lelang</a>
+                
+                                </li>
+
+                                <li>
+                
+                                    <a href="{{ route('front.contact') }}">Contact</a>
                 
                                 </li>
                 
@@ -135,7 +142,7 @@
                 
                         <ul class="top_tools">
                 
-                            <li>
+                            {{-- <li>
                 
                                 <div class="dropdown dropdown-cart">
                 
@@ -196,7 +203,7 @@
                                 <a href="#0" class="wishlist"><span>Wishlist</span></a>
                 
                             </li>
-                
+                 --}}
                             <li>
                 
                                 <div class="dropdown dropdown-access">
@@ -204,32 +211,26 @@
                                     <a href="account.html" class="access_link"><span>Account</span></a>
                 
                                     <div class="dropdown-menu">
-                
-                                        <a href="account.html" class="btn_1">Sign In or Sign Up</a>
+                                        {{-- @if (Auth::user()->check) --}}
+                                        @guest
+                                        <a href="{{ route('login') }}" class="btn_1">Sign In or Sign Up</a>
+                                        
+                                        @else
+                                        <a href="#" class="btn_1">{{ Auth::user()->name }}</a>
+                                        @endguest
+                                        
                 
                                         <ul>
                 
                                             <li>
                 
-                                                <a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
-                
-                                            </li>
-                
-                                            <li>
-                
-                                                <a href="account.html"><i class="ti-package"></i>My Orders</a>
+                                                <a href="account.html"><i class="ti-package"></i>My Bid</a>
                 
                                             </li>
                 
                                             <li>
                 
                                                 <a href="account.html"><i class="ti-user"></i>My Profile</a>
-                
-                                            </li>
-                
-                                            <li>
-                
-                                                <a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
                 
                                             </li>
                 
@@ -318,6 +319,7 @@
 
 <script src="{{ asset('front/js/carousel-home.min.js') }}"></script>
 
+@yield('script')
 </body>
 
 </html>
