@@ -37,7 +37,7 @@ Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
 
 Route::get('admin/logout','Auth\AdminAuthController@postLogout')->name('admin.logout');
 
-// Route::middleware('auth:admin')->group(function(){
+Route::middleware('auth:admin')->group(function(){
 
 Route::prefix('admin')->group(function() {
 
@@ -112,6 +112,27 @@ Route::post('data-ikan/{id}/restore','IkanController@restore')->name('admin.ikan
 Route::delete('data-ikan/{id}/delete-permanent','IkanController@deletePermanent')->name('admin.ikan.delete-permanent');
 
 
+// Manage Lelang
+Route::get('data-lelang','LelangController@index')->name('admin.lelang');
+
+Route::get('lelang/create','LelangController@create')->name('admin.lelang.create');
+
+Route::post('lelang/create','LelangController@store')->name('admin.lelang.store');
+
+Route::get('lelang/show/{id}','LelangController@show')->name('admin.lelang.show');
+
+Route::get('lelang/edit/{id}','LelangController@edit')->name('admin.lelang.edit');
+
+Route::post('lelang/edit/{id}','LelangController@update')->name('admin.lelang.update');
+
+Route::delete('lelang/destroy/{id}','LelangController@destroy')->name('admin.lelang.destroy');
+
+Route::get('lelang/trash','LelangController@trash')->name('admin.lelang.trash');
+
+Route::post('lelang/{id}/restore','LelangController@restore')->name('admin.lelang.restore');
+
+Route::delete('lelang/{id}/delete-permanent','LelangController@deletePermanent')->name('admin.lelang.delete-permanent');
+
 // Manage Data Nelayan
 Route::get('nelayan','NelayanController@index')->name('admin.nelayan');
 
@@ -155,4 +176,4 @@ Route::post('general-setting/edit/{id}','GeneralsettingController@update')->name
 
 });
 
-// });
+});

@@ -34,170 +34,30 @@
 <div class="container margin_60_35">
     <div class="main_title">
         <h2>Lelang Terbaru</h2>
-        {{-- <span>Products</span> --}}
-        <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
     </div>
     <div class="row small-gutters">
+        @foreach ($newlelang as $lelang)
+            
         <div class="col-6 col-md-4 col-xl-3">
             <div class="grid_item">
                 <figure>
                     <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
+                        <img class="img-fluid lazy" src="{{ asset('admin/lelang/'.$lelang->photo) }}" data-src="{{ asset('admin/lelang/'.$lelang->photo) }}" alt="" >
+                        {{-- <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt=""> --}}
                     </a>
                     <div data-countdown="2019/05/15" class="countdown"></div>
                 </figure>
                 <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
+                    <h3>{{ $lelang->jenis_ikan }}</h3>
                 </a>
                 <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
+                    <span class="new_price">Rp. {{ number_format($lelang->harga_awal) }}</span>
                 </div>
             </div>
             <!-- /grid_item -->
         </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-            <div class="grid_item">
-                <figure>
-                    <a href="product-detail-1.html">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1.jpg') }}" alt="">
-                        <img class="img-fluid lazy" src="{{ asset('front/img/products/product_placeholder_square_medium.jpg') }}" data-src="{{ asset('front/img/products/shoes/1_b.jpg') }}" alt="">
-                    </a>
-                    <div data-countdown="2019/05/15" class="countdown"></div>
-                </figure>
-                <a href="product-detail-1.html">
-                    <h3>Armor Air x Fear</h3>
-                </a>
-                <div class="price_box">
-                    <span class="new_price">$48.00</span>
-                    <span class="old_price">$60.00</span>
-                </div>
-            </div>
-            <!-- /grid_item -->
-        </div>
-        <!-- /col -->
+        @endforeach
+       
     </div>
     <!-- /row -->
 </div>

@@ -4571,6 +4571,8 @@ body.modal-open .mm-slideout {
   visibility: visible;
   opacity: 1;
   transform: translateZ(0);
+  height: 200px;
+  width: 300px;
 }
 .grid_item figure img:nth-child(2) {
   position: absolute;

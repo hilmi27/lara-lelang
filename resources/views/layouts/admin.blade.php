@@ -256,7 +256,7 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/tables/simple.html" class="nav-link">
+                                        <a href="{{ route('admin.lelang') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       
@@ -268,7 +268,7 @@
       
                                     <li class="nav-item">
       
-                                        <a href="pages/tables/data.html" class="nav-link">
+                                        <a href="{{ route('admin.lelang.trash') }}" class="nav-link">
       
                                             <i class="far fa-circle nav-icon"></i>
       

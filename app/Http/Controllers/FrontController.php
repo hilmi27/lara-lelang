@@ -8,6 +8,8 @@ use App\Generalsetting;
 
 use App\Bannerslider;
 
+use App\Lelang;
+
 class FrontController extends Controller
 {
     // public function __construct($gs)
@@ -18,7 +20,8 @@ class FrontController extends Controller
     public function home(){
         $gs = Generalsetting::all();
         $banner = Bannerslider::all();
-        return view('front.home',compact('banner','gs'));
+        $newlelang = Lelang::orderBy('id','desc')->where('status','=','on progress')->limit(8)->get();
+        return view('front.home',compact('banner','gs','newlelang'));
     }
 
     public function about(){
