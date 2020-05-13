@@ -107,9 +107,9 @@
         
             <td>
         
-              <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"><i class="fa fa-envelope"></i> Email</a>
+              <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"> Email</a>
 
-              <a href="{{route('admin.nelayan.edit', [$data->id])}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>                
+              <a href="{{route('admin.nelayan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
               <form class="d-inline" action="{{route('admin.nelayan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
 

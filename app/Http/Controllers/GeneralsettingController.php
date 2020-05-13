@@ -133,25 +133,6 @@ class GeneralsettingController extends Controller
 
        } 
 
-       if ($file = $request->file('banner_mid')) 
-
-       {              
-
-            $name = "banner_mid-".time().$file->getClientOriginalName();
-
-            $file->move('admin/gs',$name);   
-
-            if($gs->banner_mid != null)
-            {
-               if (file_exists(public_path().'admin/gs/'.$gs->banner_mid)) {
-                   unlink(public_path().'admin/gs/'.$gs->banner_mid);
-               }
-            }           
-
-           $gs['banner_mid'] = $name;
-
-       } 
-
        if ($file = $request->file('bg_title')) 
 
        {              

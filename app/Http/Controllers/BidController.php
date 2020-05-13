@@ -4,15 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Nelayan;
+use App\Bid;
 
-use App\User;
+use Auth;
 
-use App\Ikan;
-
-use App\Lelang;
-
-class DashboardController extends Controller
+class BidController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,11 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = User::count();
-        $nelayan = Nelayan::count();
-        $ikan = Ikan::count();
-        $lelang = Lelang::count();
-        return view ('admin.dashboard',compact('user','nelayan','ikan','lelang'));
+        //
     }
 
     /**
@@ -46,7 +38,18 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bid = new Bid();
+        $bid->id_lelang = $request->id_lelang;
+        $bid->id_user = Auth::user()->id;
+        $bid->bid = $request->bid;
+
+        // dd($bid);
+        if ($bid->save()) {
+            return redirect()->back()->with('success','Penawaran berhasil ditambahkan');
+        } else {
+           return redirect()->back()->with('error','Penawaran gagal ditambahkan');
+        }
+        
     }
 
     /**

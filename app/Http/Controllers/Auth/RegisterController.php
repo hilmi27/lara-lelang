@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'lok_simpanan' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
     }
 
@@ -78,6 +79,7 @@ class RegisterController extends Controller
             'lok_simpanan' => $data['lok_simpanan'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'status' => 'nonactived',
 
         ]);
     }

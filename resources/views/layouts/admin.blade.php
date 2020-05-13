@@ -148,7 +148,7 @@
      
                                 <a href="#" class="nav-link">
      
-                                    <i class="nav-icon fas fa-tree"></i>
+                                    <i class="nav-icon fas fa-edit"></i>
      
                                     <p>
      
@@ -240,7 +240,7 @@
       
                                 <a href="#" class="nav-link">
       
-                                    <i class="nav-icon fas fa-table"></i>
+                                    <i class="nav-icon fas fa-edit"></i>
       
                                     <p>
       
@@ -286,7 +286,53 @@
       
                                 <a href="#" class="nav-link">
       
-                                    <i class="nav-icon far fa-envelope"></i>
+                                    <i class="nav-icon fas fa-users"></i>
+      
+                                    <p>
+      
+                                        Data user
+      
+                                        <i class="fas fa-angle-left right"></i>
+      
+                                    </p>
+      
+                                </a>
+      
+                                <ul class="nav nav-treeview">
+      
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.user') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data</p>
+      
+                                        </a>
+      
+                                    </li>
+      
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.user.trash') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Trash</p>
+      
+                                        </a>
+      
+                                    </li>
+      
+                                </ul>
+      
+                            </li>
+
+                            <li class="nav-item has-treeview">
+      
+                                <a href="#" class="nav-link">
+      
+                                    <i class="nav-icon fas fa-users"></i>
       
                                     <p>
       
@@ -332,7 +378,7 @@
      
                                 <a href="#" class="nav-link">
      
-                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <i class="nav-icon fas fa-edit"></i>
      
                                     <p>
      
@@ -374,11 +420,12 @@
      
                             </li>
 
+                    
                             <li class="nav-item has-treeview">
      
                                 <a href="#" class="nav-link">
      
-                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <i class="nav-icon fas fa-cogs"></i>
      
                                     <p>
      
@@ -403,6 +450,19 @@
                                         </a>
      
                                     </li>
+
+                                    {{-- <li class="nav-item">
+     
+                                        <a href="{{ route('admin.generalsetting.favicon') }}" class="nav-link">
+     
+                                            <i class="far fa-circle nav-icon"></i>
+     
+                                            <p>Favicon</p>
+     
+                                        </a>
+     
+                                    </li> --}}
+
      
                                     <li class="nav-item">
      
@@ -426,7 +486,7 @@
       
                                 <a href="{{ route('admin.logout') }}" class="nav-link">
       
-                                    <i class="nav-icon far fa-image"></i>
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>
       
                                     <p>
       

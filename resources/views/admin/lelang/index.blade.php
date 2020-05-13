@@ -111,9 +111,9 @@
         
             <td>
         
-              <a href="{{route('admin.lelang.show', [$data->id])}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Show</a>     
+              <a href="{{route('admin.lelang.show', [$data->id])}}" class="btn btn-info btn-sm"> Show</a>     
 
-              <a href="{{route('admin.lelang.edit', [$data->id])}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>                
+              <a href="{{route('admin.lelang.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
               <form class="d-inline" action="{{route('admin.lelang.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
 

@@ -29,6 +29,10 @@ Route::get('contact','FrontController@contact')->name('front.contact');
 
 Route::get('lelang','FrontController@lelang')->name('front.lelang');
 
+Route::get('lelang/detail/{id}','FrontController@lelangshow')->name('front.lelangshow');
+
+Route::post('lelang/detail','BidController@store')->name('front.lelang.bid');
+
 // Admin
 
 Route::get('admin/login', 'Auth\AdminAuthController@getLogin')->name('admin.login');
@@ -61,6 +65,22 @@ Route::get('staff/trash','StaffController@trash')->name('admin.staff.trash');
 Route::post('staff/{id}/restore','StaffController@restore')->name('admin.staff.restore');
 
 Route::delete('staff/{id}/delete-permanent','StaffController@deletePermanent')->name('admin.staff.delete-permanent');
+
+
+// Manage User
+Route::get('user','UserController@index')->name('admin.user');
+
+Route::get('user/edit/{id}','UserController@edit')->name('admin.user.edit');
+
+Route::post('user/edit/{id}','UserController@update')->name('admin.user.update');
+
+Route::delete('user/destroy/{id}','UserController@destroy')->name('admin.user.destroy');
+
+Route::get('user/trash','UserController@trash')->name('admin.user.trash');
+
+Route::post('user/{id}/restore','UserController@restore')->name('admin.user.restore');
+
+Route::delete('user/{id}/delete-permanent','UserController@deletePermanent')->name('admin.user.delete-permanent');
 
 
 // Manage Wilayah Penangkapan
@@ -173,6 +193,10 @@ Route::get('general-setting','GeneralsettingController@index')->name('admin.gene
 Route::get('general-setting/edit/{id}','GeneralsettingController@edit')->name('admin.generalsetting.edit');
 
 Route::post('general-setting/edit/{id}','GeneralsettingController@update')->name('admin.generalsetting.update');
+
+// Route::get('general-setting/edit/favicon/{id}','GeneralsettingController@favicon')->name('admin.generalsetting.favicon');
+
+// Route::post('general-setting/edit/favicon/{id}','GeneralsettingController@faviconupdate')->name('admin.generalsetting.faviconupdate');
 
 });
 

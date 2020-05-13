@@ -17,10 +17,7 @@ class CreateLelangsTable extends Migration
             $table->id();
             $table->string('jenis_ikan');
             $table->string('slug');
-            $table->string('photoa');
-            $table->string('photob')->nullable();
-            $table->string('photoc')->nullable();
-            $table->string('photod')->nullable();
+            $table->string('photo');
             $table->string('kualitas');
             $table->string('ukuran');
             $table->integer('qty');

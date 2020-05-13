@@ -221,20 +221,6 @@
         </div>
 
       </div> 
-      
-      <div class="form-group">
-
-        <label for="banner_mid">Banner Mid</label>
-
-        <input type="file" name="banner_mid" value="{{old('banner_mid') ? old('banner_mid') : $gs->banner_mid}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}" id="title" placeholder="Masukkan judul banner">
-
-        <div class="invalid-feedback">
-
-            {{$errors->first('banner_mid')}}
-
-        </div>
-
-      </div>
 
       <div class="form-group">
 

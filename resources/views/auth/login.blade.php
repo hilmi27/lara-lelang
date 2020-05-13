@@ -61,15 +61,17 @@
                         </div>
 
                         <div class="float-right">
-                            @if (Route::has('password.request'))
+                            {{-- @if (Route::has('password.request'))
                             <a id="forgot" href="{{ route('password.request') }}">Lost Password?</a>
-                            @endif
+                            @endif --}}
                         </div>
 
                     </div>
 
                     <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
 
+                    <a href="{{ route('register') }}">Belum punya akun ? klik disini untuk register</a>
+                    
                     <div id="forgot_pw">
 
                         <div class="form-group">

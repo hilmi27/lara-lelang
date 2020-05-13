@@ -151,11 +151,11 @@
         
             <option value="">Pilih Role</option>
 
-            <option value="Administrator" {{$staff->role ? "selected":""}}>Administrator</option>
+            <option {{$staff->role == 'Administrator' ? "selected":""}} value="Administrator" >Administrator</option>
 
-            <option value="Watcher" {{$staff->role ? "selected":""}}>Watcher</option>
+            <option {{$staff->role == 'Watcher' ? "selected":""}} value="Watcher">Watcher</option>
 
-            <option value="Operator" {{$staff->role ? "selected":""}}>Operator</option>
+            <option {{$staff->role == 'Operator' ? "selected":""}} value="Operator">Operator</option>
 
         </select>
 
