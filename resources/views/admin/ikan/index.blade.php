@@ -111,6 +111,8 @@
         
             <td>
         
+              <a href="{{route('admin.ikan.lelang', [$data->id])}}" class="btn btn-success btn-sm"> Lelang</a>          
+
               <a href="{{route('admin.ikan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
               <form class="d-inline" action="{{route('admin.ikan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
@@ -130,6 +132,17 @@
           @endforeach
 
         </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Jumlah</th>
+            <th>{{ $ikans }}</th>
+            <th> </th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </tfoot>
 
       </table>
 

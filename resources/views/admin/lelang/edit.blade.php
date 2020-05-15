@@ -116,6 +116,20 @@
             <h6>Pilih Cover</h6>
 
         </div>
+
+        <div class="col-md-6 form-group">
+
+          <label for="title">Title</label>
+  
+          <input type="text" name="title" value="{{old('title') ? old('title') : $lelang->title}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}"   id="title" placeholder="Masukkan Judul Lelang">
+  
+          <div class="invalid-feedback">
+  
+              {{$errors->first('title')}}
+  
+          </div>
+  
+        </div> 
       
         <div class="col-md-6 form-group">
 

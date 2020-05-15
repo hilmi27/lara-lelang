@@ -27,9 +27,12 @@
                                     {{ $banner->note }}
    
                                 </p>
-   
+
+                                @if (!empty($banner->link))
+                                    
                                 <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="{{ $banner->link }}" role="button">Visit Now</a></div>
-   
+                                
+                                @endif
                             </div>
    
                         </div>
@@ -74,7 +77,7 @@
                 
                     </a>
                 
-                    <div data-countdown="{{ date('Y-m-d', strtotime('+6 days', strtotime($lelang->tgl_lelang))) }}" class="countdown"></div>
+                    {{-- <div data-countdown="{{ date('Y-m-d', strtotime('+6 days', strtotime($lelang->tgl_lelang))) }}" class="countdown"></div> --}}
                 
                 </figure>
                 

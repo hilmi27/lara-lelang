@@ -58,19 +58,19 @@
         
                     </a>
         
-                    <div data-countdown="2020/05/10" class="countdown"></div>
+                    {{-- <div data-countdown="2020/05/10" class="countdown"></div> --}}
         
                 </figure>
         
-                <a href="product-detail-1.html">
+                <a href="{{ route('front.lelangshow',$data->id) }}">
         
-                    <h3>Tuna Super</h3>
+                    <h3>{{ $data->title }}</h3>
         
                 </a>
         
                 <div class="price_box">
         
-                    <span>Open Bid </span><span class="new_price">Rp. 20.000.000</span>
+                    <span>Open Bid </span><span class="new_price">Rp. {{ number_format($data->harga_awal) }}</span>
         
                 </div>
         

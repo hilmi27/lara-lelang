@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Mail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -79,8 +80,14 @@ class RegisterController extends Controller
             'lok_simpanan' => $data['lok_simpanan'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'status' => 'nonactived',
+            'status' => 'submission',
 
         ]);
+        Mail::send('email', ['nama' => $data['name']], function ($message) use ($data)
+        {
+            $message->subject('Register On-Lelang');
+            $message->from('donotreply@lelang.online', 'on-lelang');
+            $message->to($data['email']);
+        });
     }
 }

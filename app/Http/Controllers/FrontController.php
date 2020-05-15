@@ -27,13 +27,9 @@ class FrontController extends Controller
         return view('front.home',compact('banner','gs','poplelang','newlelang'));
     }
 
-    public function about(){
-        return view('front.about');
-    }
-
     public function lelang(){
         $gs = Generalsetting::all();
-        $lelang = Lelang::where('status','=','on progress')->orderBy('id','desc')->paginate(4);
+        $lelang = Lelang::where('status','=','on progress')->orderBy('id','desc')->paginate(16);
        
         return view('front.lelang',compact('gs','lelang'));
     }

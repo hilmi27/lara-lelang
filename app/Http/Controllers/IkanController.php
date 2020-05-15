@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Ikan;
 
+use Illuminate\Support\Str;
+
+use App\Lelang;
+
 use App\Jenisikan;
 
 use App\Wilayah;
@@ -20,8 +24,8 @@ class IkanController extends Controller
     public function index()
     {
         $ikan = Ikan::orderBy('id','desc')->get();
-
-        return view('admin.ikan.index',compact('ikan'));
+        $ikans = Ikan::sum('qty');
+        return view('admin.ikan.index',compact('ikan','ikans'));
     }
 
     /**
@@ -75,6 +79,8 @@ class IkanController extends Controller
         }
     }
 
+    
+
     /**
      * Display the specified resource.
      *
@@ -92,6 +98,8 @@ class IkanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    
     public function edit($id)
     {
         $ikan = Ikan::findOrFail($id);
@@ -148,6 +156,67 @@ class IkanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function lelang($id){
+        $lelang = Ikan::findOrFail($id);
+
+        return view ('admin.ikan.lelang',compact('lelang'));
+    }
+
+    public function lelangstore(Request $request){
+        \Validator::make($request->all(), [
+            "title" => "required",
+            "photo" => "required",
+            "jenis_ikan" => "required",
+            "kualitas" => "required",
+            "ukuran" => "required",
+            "qty" => "required",
+            "harga_awal" => "required",
+            "tgl_lelang" => "required",
+            "detail" => "required",     
+            "status" => "required",     
+        ])->validate();
+
+        $id_ikan = $request->id_ikan;
+
+        $lelang = new Lelang();
+        $lelang->title = $request->title;
+        $lelang->id_ikan = $id_ikan;
+        $lelang->jenis_ikan = $request->jenis_ikan;
+        $lelang->slug = Str::slug($request->title);
+        $lelang->kualitas = $request->kualitas;
+        $lelang->ukuran = $request->ukuran;
+        $lelang->qty = $request->qty;
+        $lelang->detail = $request->detail;
+        $lelang->harga_awal = $request->harga_awal;
+        $lelang->tgl_lelang = $request->tgl_lelang;
+        $lelang->status = $request->status;
+
+        if ($file = $request->file('photo')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photo'] = $name;
+       
+        }   
+
+        if ($lelang->save()) {
+
+            $lelang_ = Lelang::where('id_ikan', $id_ikan)->get()->sum('qty');
+            $ikan = Ikan::find($id_ikan);
+            $substract = intval($ikan->qty - $lelang_);
+            $ikan->qty = $substract;
+            $ikan->save();
+
+            return redirect()->route('admin.lelang')->with('success','Data lelang berhasil ditambahkan');
+    
+        } else {
+    
+            return redirect()->back()->with('error','Data gagal ditambahkan');
+    
+        }
+    }
+
     public function destroy($id)
     {
         $ikan = Ikan::findOrFail($id);

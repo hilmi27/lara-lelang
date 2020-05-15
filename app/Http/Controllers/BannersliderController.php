@@ -40,8 +40,7 @@ class BannersliderController extends Controller
     {
         \Validator::make($request->all(), [
             "photo"=> "required",
-            "title" => "required|max:50",
-            "note" => "max:50",        
+              
         ])->validate();
 
         $banner = new Bannerslider();

@@ -8,6 +8,8 @@ use App\Lelang;
 
 use App\Jenisikan;
 
+use App\Bid;
+
 use Illuminate\Support\Str;
 
 class LelangController extends Controller
@@ -45,9 +47,23 @@ class LelangController extends Controller
      */
     public function store(Request $request)
     {
+        \Validator::make($request->all(), [
+            "title" => "required",
+            "photo" => "required",
+            "jenis_ikan" => "required",
+            "kualitas" => "required",
+            "ukuran" => "required",
+            "qty" => "required",
+            "harga_awal" => "required",
+            "tgl_lelang" => "required",
+            "detail" => "required",     
+            "status" => "required",     
+        ])->validate();
+
         $lelang = new Lelang();
+        $lelang->title = $request->title;
         $lelang->jenis_ikan = $request->jenis_ikan;
-        $lelang->slug = Str::slug($request->jenis_ikan);
+        $lelang->slug = Str::slug($request->title);
         $lelang->kualitas = $request->kualitas;
         $lelang->ukuran = $request->ukuran;
         $lelang->qty = $request->qty;
@@ -64,6 +80,7 @@ class LelangController extends Controller
        
         }   
 
+        // dd($lelang);
         if ($lelang->save()) {
 
             return redirect()->route('admin.lelang')->with('success','Data lelang berhasil ditambahkan');
@@ -84,7 +101,33 @@ class LelangController extends Controller
      */
     public function show($id)
     {
-        //
+        $lelang = Lelang::findOrFail($id);
+
+        $bid = Bid::where('id_lelang','=', $id)->orderBy('bid','desc')->get();
+        return view('admin.lelang.show',compact('lelang','bid'));
+    }
+
+    public function setpemenang(Request $request, $id)
+    {
+        $lelang = Lelang::findOrFail($id);
+
+        $lelang->pemenang = $request->pemenang;
+
+        if ($lelang->save()) {
+
+            $lelang->status = 'done';
+
+            $lelang->save();
+            
+            return redirect()->route('admin.lelang')->with('success','Pemenang lelang no. '.$id.' telah ditentukan');
+    
+        } else {
+    
+            return redirect()->back()->with('error','Pememang gagal ditambahkan');
+    
+        }
+        
+
     }
 
     /**
@@ -112,6 +155,7 @@ class LelangController extends Controller
     public function update(Request $request, $id)
     {
         // \Validator::make($request->all(), [
+        //     "title" => "required",
         //     "photo" => "required",
         //     "jenis_ikan" => "required",
         //     "kualitas" => "required",
@@ -124,8 +168,9 @@ class LelangController extends Controller
         // ])->validate();
 
         $lelang             = Lelang::findOrFail($id);
+        $lelang->title      = $request->title;
         $lelang->jenis_ikan = $request->jenis_ikan;
-        $lelang->slug       = Str::slug($request->jenis_ikan);
+        $lelang->slug       = Str::slug($request->title);
         $lelang->kualitas   = $request->kualitas;
         $lelang->ukuran     = $request->ukuran;
         $lelang->qty        = $request->qty;

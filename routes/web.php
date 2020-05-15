@@ -123,6 +123,10 @@ Route::get('data-ikan/edit/{id}','IkanController@edit')->name('admin.ikan.edit')
 
 Route::post('data-ikan/edit/{id}','IkanController@update')->name('admin.ikan.update');
 
+Route::get('data-ikan/lelang/{id}','IkanController@lelang')->name('admin.ikan.lelang');
+
+Route::post('data-ikan/lelang','IkanController@lelangstore')->name('admin.ikan.lelangstore');
+
 Route::delete('data-ikan/destroy/{id}','IkanController@destroy')->name('admin.ikan.destroy');
 
 Route::get('data-ikan/trash','IkanController@trash')->name('admin.ikan.trash');
@@ -141,9 +145,11 @@ Route::post('lelang/create','LelangController@store')->name('admin.lelang.store'
 
 Route::get('lelang/show/{id}','LelangController@show')->name('admin.lelang.show');
 
+Route::post('lelang/show/{id}','LelangController@setpemenang')->name('admin.lelang.setpemenang');
+
 Route::get('lelang/edit/{id}','LelangController@edit')->name('admin.lelang.edit');
 
-Route::post('lelang/edit/{id}','LelangController@update')->name('admin.lelang.update');
+Route::post('lelang','LelangController@update')->name('admin.lelang.update');
 
 Route::delete('lelang/destroy/{id}','LelangController@destroy')->name('admin.lelang.destroy');
 

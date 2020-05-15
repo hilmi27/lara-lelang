@@ -77,7 +77,6 @@ class GeneralsettingController extends Controller
          \Validator::make($request->all(), [
             "favicon"=> "required",
             "logo" => "required",
-            "banner_mid" => "required",
             "bg_title" => "required",
             "title" => "required|max:50",       
         ])->validate();

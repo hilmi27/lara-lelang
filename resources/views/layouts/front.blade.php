@@ -18,7 +18,7 @@
     <title>Lelang</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="{{ asset('front/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('admin/gs/favicon-1589367156Fish_icon-icons.com_67594.png') }}" type="image/x-icon">
 
     <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('front/img/apple-touch-icon-57x57-precomposed.png') }}">
 
@@ -156,11 +156,11 @@
 
                                             <ul>                                
                       
-                                                <li>
+                                                {{-- <li>
 
                                                     <a href="account.html"><i class="ti-user"></i>My Profile</a>                
                         
-                                                </li>
+                                                </li> --}}
 
                                                 <li>                
                          
@@ -217,11 +217,11 @@
           
                         <ul class="additional_links">
               
-                            <li><a href="#0">Terms and conditions</a></li>
+                            {{-- <li><a href="#0">Terms and conditions</a></li>
              
-                            <li><a href="#0">Privacy</a></li>
+                            <li><a href="#0">Privacy</a></li> --}}
              
-                            <li><span>© 2020 Allaia</span></li>
+                            <li><span>2020 - Lelang.online</span></li>
 
                         </ul>    
              
