@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use Mail;
+
+use App\Mail\UserAcceptMail;
+
+use App\Mail\UserRejectMail;
+
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -20,6 +26,12 @@ class UserController extends Controller
         $user = User::orderBy('id','desc')->get();
 
         return view('admin.user.index',compact('user'));
+    }
+
+    public function submission(){
+        $user = User::where('status','=','Submission')->orderBy('id','desc')->get();
+
+        return view('admin.user.submission',compact('user'));
     }
 
     /**
@@ -86,6 +98,13 @@ class UserController extends Controller
         $user->lok_simpanan = $request->lok_simpanan;
         $user->password = Hash::make($request->password);
         $user->status = $request->status;
+
+        if ($user->status == 'Actived') {
+            Mail::to($request->email)->send(new UserAcceptMail());
+        }
+        if ($user->status == 'Nonactived') {
+            Mail::to($request->email)->send(new UserRejectMail());
+        }
 
         if ($user->save()) {
             return redirect()->route('admin.user')->with('success','Data user berhasil diperbarui');

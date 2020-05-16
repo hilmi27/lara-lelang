@@ -158,6 +158,9 @@
 
                         </li>     
                      
+                        
+                        @if (Auth::user()->role == 'Administrator')
+                            
                         <li class="nav-item has-treeview">
 
                             <a href="#" class="nav-link">     
@@ -274,7 +277,43 @@
       
                                             <i class="far fa-circle nav-icon"></i>
       
-                                            <p>Data</p>
+                                            <p>All</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.lelang.onprogress') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>On Progress</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.lelang.done') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Done</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.lelang.cancel') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Cancel</p>
       
                                         </a>
       
@@ -295,7 +334,245 @@
                                 </ul>
       
                             </li>   
+                            @elseif(Auth::user()->role == 'Operator')
+                            <li class="nav-item has-treeview">
 
+                                <a href="#" class="nav-link">     
+            
+                                    <i class="nav-icon fas fa-edit"></i>
+    
+                                    <p>     
+              
+                                        Data Ikan
+    
+                                        <i class="fas fa-angle-left right"></i>     
+           
+                                    </p>
+    
+                                </a>     
+                    
+                                <ul class="nav nav-treeview">
+    
+                                    <li class="nav-item">
+    
+                                        <a href="{{ route('admin.ikan') }}" class="nav-link">
+    
+                                            <i class="far fa-circle nav-icon"></i>     
+                                        
+                                            <p>Data</p>
+         
+                                            </a>
+         
+                                        </li>
+         
+                                        <li class="nav-item">
+         
+                                            <a href="{{ route('admin.ikan.trash') }}" class="nav-link">
+         
+                                                <i class="far fa-circle nav-icon"></i>
+         
+                                                <p>Trash</p>
+         
+                                            </a>
+         
+                                        </li>         
+          
+                                    </ul>
+          
+                                </li>
+          
+                                <li class="nav-item has-treeview">
+          
+                                    <a href="#" class="nav-link">
+          
+                                        <i class="nav-icon fas fa-edit"></i>
+          
+                                        <p>
+          
+                                            Data Nelayan
+          
+                                            <i class="fas fa-angle-left right"></i>
+          
+                                        </p>
+          
+                                    </a>
+          
+                                    <ul class="nav nav-treeview">
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.nelayan') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Data</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.nelayan.trash') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Trash</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                    </ul>
+          
+                                </li>
+          
+                                <li class="nav-item has-treeview">
+          
+                                    <a href="#" class="nav-link">
+          
+                                        <i class="nav-icon fas fa-edit"></i>
+          
+                                        <p>
+          
+                                            Data Lelang
+          
+                                            <i class="fas fa-angle-left right"></i>
+          
+                                        </p>
+          
+                                    </a>
+          
+                                    <ul class="nav nav-treeview">
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.lelang') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>All</p>
+          
+                                            </a>
+          
+                                        </li>
+    
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.lelang.onprogress') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>On Progress</p>
+          
+                                            </a>
+          
+                                        </li>
+    
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.lelang.done') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Done</p>
+          
+                                            </a>
+          
+                                        </li>
+    
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.lelang.cancel') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Cancel</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.lelang.trash') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Trash</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                    </ul>
+          
+                                </li>   
+
+                                <li class="nav-item has-treeview">
+      
+                                    <a href="#" class="nav-link">
+          
+                                        <i class="nav-icon fas fa-users"></i>
+          
+                                        <p>
+          
+                                            Data user
+          
+                                            <i class="fas fa-angle-left right"></i>
+          
+                                        </p>
+          
+                                    </a>
+          
+                                    <ul class="nav nav-treeview">
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.user') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Data</p>
+          
+                                            </a>
+          
+                                        </li>
+
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.user.submission') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Submission</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                        <li class="nav-item">
+          
+                                            <a href="{{ route('admin.user.trash') }}" class="nav-link">
+          
+                                                <i class="far fa-circle nav-icon"></i>
+          
+                                                <p>Trash</p>
+          
+                                            </a>
+          
+                                        </li>
+          
+                                    </ul>
+          
+                                </li>
+
+                            @endif
+
+                           
+                            @if (Auth::user()->role == 'Administrator')
+                                
+                            
                             <li class="nav-item has-treeview">
       
                                 <a href="#" class="nav-link">
@@ -321,6 +598,18 @@
                                             <i class="far fa-circle nav-icon"></i>
       
                                             <p>Data</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+          
+                                        <a href="{{ route('admin.user.submission') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Submission</p>
       
                                         </a>
       
@@ -480,7 +769,29 @@
                                 </ul>
      
                             </li>
+                            @endif
      
+                            @if (Auth::user()->role == 'Watcher')
+                                
+                           
+                            <li class="nav-item">
+      
+                                <a href="{{ route('admin.logout') }}" class="nav-link">
+      
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>
+      
+                                    <p>
+      
+                                        Report
+      
+                                    </p>
+      
+                                </a>
+      
+                            </li> 
+
+                            @endif
+
                             <br>
       
                             <li class="nav-item">

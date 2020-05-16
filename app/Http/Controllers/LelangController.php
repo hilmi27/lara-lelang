@@ -27,6 +27,25 @@ class LelangController extends Controller
         // echo 'test';
     }
 
+    public function onprogress(){
+        $lelang = Lelang::where('status','=','on progress')->orderBy('id','desc')->get();
+
+        return view('admin.lelang.onprogress',compact('lelang'));
+    }
+
+    public function done(){
+        $lelang = Lelang::where('status','=','done')->orderBy('id','desc')->get();
+
+        return view('admin.lelang.done',compact('lelang'));
+    }
+
+    public function cancel(){
+        $lelang = Lelang::where('status','=','cancel')->orderBy('id','desc')->get();
+
+        return view('admin.lelang.cancel',compact('lelang'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -109,16 +128,19 @@ class LelangController extends Controller
 
     public function setpemenang(Request $request, $id)
     {
-        $lelang = Lelang::findOrFail($id);
+        $lelang                 = Lelang::findOrFail($id);
 
-        $lelang->pemenang = $request->pemenang;
+        $lelang->pemenang       = $request->pemenang;
 
+        $lelang->harga_akhir    = $request->harga_akhir;
+
+        // dd($lelang);
         if ($lelang->save()) {
 
             $lelang->status = 'done';
 
             $lelang->save();
-            
+
             return redirect()->route('admin.lelang')->with('success','Pemenang lelang no. '.$id.' telah ditentukan');
     
         } else {
@@ -142,6 +164,7 @@ class LelangController extends Controller
 
         $lelang = Lelang::findOrFail($id);
 
+        // dd($lelang);
         return view('admin.lelang.edit',compact('lelang','jenis'));
     }
 
@@ -167,6 +190,8 @@ class LelangController extends Controller
         //     "status" => "required",     
         // ])->validate();
 
+        $id_ikan = $request->id_ikan;
+
         $lelang             = Lelang::findOrFail($id);
         $lelang->title      = $request->title;
         $lelang->jenis_ikan = $request->jenis_ikan;
@@ -187,6 +212,14 @@ class LelangController extends Controller
        
         }   
 
+        if ($request->status == 'Cancel') {
+            $lelang_ = Lelang::where('id_ikan', $id_ikan)->get()->sum('qty');
+            $ikan = Ikan::find($id_ikan);
+            $substract = intval($ikan->qty + $lelang_);
+            $ikan->qty = $substract;
+
+            $ikan->save();
+        }
         // dd($lelang);
         if ($lelang->save()) {
 

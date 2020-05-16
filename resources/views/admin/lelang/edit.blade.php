@@ -270,7 +270,9 @@
         </div>
 
 
-      </div>     
+      </div> 
+      
+      <input type="text" name="id_ikan" value="{{ $lelang->id_ikan }}" style="display: none">
       
     </div>
     

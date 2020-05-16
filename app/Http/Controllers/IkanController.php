@@ -66,7 +66,15 @@ class IkanController extends Controller
         $ikan->harga                = $request->harga;
         $ikan->tgl_masuk            = $request->tgl_masuk;
         $ikan->wilayah_penangkapan  = $request->wilayah_penangkapan;
-          
+        
+        if ($file = $request->file('photo')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photo'] = $name;
+       
+        }   
+
         // dd($ikan);
         if ($ikan->save()) {
 
@@ -137,8 +145,16 @@ class IkanController extends Controller
         $ikan->harga                = $request->harga;
         $ikan->tgl_masuk            = $request->tgl_masuk;
         $ikan->wilayah_penangkapan  = $request->wilayah_penangkapan;
-          
-        // dd($ikan);
+        
+        if ($file = $request->file('photo')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photo'] = $name;
+       
+        }   
+
+        dd($ikan);
         if ($ikan->save()) {
 
             return redirect()->route('admin.ikan')->with('success','Data ikan berhasil diupdate');

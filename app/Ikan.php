@@ -12,6 +12,7 @@ class Ikan extends Model
     
     protected $table = "ikan";
 
+    protected $fillable = ['photo','jenis_ikan','kualitas','ukuran','qty','harga','tgl_masuk','wilayah_penangkapan'];
     public function lelang()
         {
         return $this->hasMany('App\Lelang');

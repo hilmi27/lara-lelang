@@ -12,7 +12,7 @@
   
         <div class="col-sm-6">
   
-          <h1 class="m-0 text-dark">Data Ikan</h1>
+          <h1 class="m-0 text-dark">Data User</h1>
   
         </div><!-- /.col -->
   
@@ -22,7 +22,7 @@
   
             <li class="breadcrumb-item"><a href="#">Home</a></li>
   
-            <li class="breadcrumb-item active">Data Ikan</li>
+            <li class="breadcrumb-item active">Data User</li>
   
           </ol>
   
@@ -49,15 +49,13 @@
 
     <div class="card-header">
 
-      <a href="{{ route('admin.ikan.create') }}" class="card-title">        
+      {{-- <a href="{{ route('admin.staff.create') }}" class="card-title">        
  
         <button type="button" class="btn btn-block btn-primary"><i class="fa fa-plus"></i>Tambah Data</button>
  
-      </a>
+      </a> --}}
  
     </div>
- 
-    <!-- /.card-header -->
  
     <div class="card-body">
  
@@ -69,17 +67,13 @@
  
             <th>No.</th>
  
-            <th>Photo</th>
-            
-            <th>Jenis Ikan</th>
+            <th>Nama</th>
 
-            <th>Kuantitas</th>
+            <th>Alamat</th>
 
-            <th>Harga</th>
+            <th>Email</th>
 
-            <th>Tanggal Masuk</th>
-
-            <th>Wilayah</th>
+            <th>No. HP</th>
  
             <th>Action</th>
  
@@ -95,33 +89,32 @@
         
         <tbody>
         
-          @foreach ($ikan as $data)
+          @foreach ($user as $data)
         
           <tr>
         
             <td>{{ ++$no }}</td>
         
-            <td>
-              <img src="{{ $data->photo ? asset('admin/ikan/'.$data->photo):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="" height="100px" width="200px">
-            </td>
-            
-            <td>{{ $data->jenis_ikan }}</td>
+            <td>{{ $data->name }}</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->alamat }}</td>
 
-            <td>Rp. {{ number_format($data->harga) }}</td>
+            <td>{{ $data->email }}</td>
 
-            <td>{{ $data->tgl_masuk }}</td>
-
-            <td>{{ $data->wilayah_penangkapan }}</td>
+            <td>{{ $data->no_hp }}</td>
         
             <td>
         
-              <a href="{{route('admin.ikan.lelang', [$data->id])}}" class="btn btn-success btn-sm"> Lelang</a>          
+                @php
+                    $num = (int)$data->no_hp;
+                @endphp
+              <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"> Email</a>
 
-              <a href="{{route('admin.ikan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
+              <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm"> Whatsapp</a>
+
+              <a href="{{route('admin.user.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
-              <form class="d-inline" action="{{route('admin.ikan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+              <form class="d-inline" action="{{route('admin.user.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
 
                 @csrf 
          
@@ -138,17 +131,6 @@
           @endforeach
 
         </tbody>
-        <tfoot>
-          <tr>
-            <th></th>
-            <th>Jumlah</th>
-            <th>{{ $ikans }}</th>
-            <th> </th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </tfoot>
 
       </table>
 

@@ -83,11 +83,6 @@ class RegisterController extends Controller
             'status' => 'submission',
 
         ]);
-        Mail::send('email', ['nama' => $data['name']], function ($message) use ($data)
-        {
-            $message->subject('Register On-Lelang');
-            $message->from('donotreply@lelang.online', 'on-lelang');
-            $message->to($data['email']);
-        });
+       
     }
 }

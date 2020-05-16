@@ -70,6 +70,8 @@ Route::delete('staff/{id}/delete-permanent','StaffController@deletePermanent')->
 // Manage User
 Route::get('user','UserController@index')->name('admin.user');
 
+Route::get('user/submission','UserController@submission')->name('admin.user.submission');
+
 Route::get('user/edit/{id}','UserController@edit')->name('admin.user.edit');
 
 Route::post('user/edit/{id}','UserController@update')->name('admin.user.update');
@@ -149,7 +151,7 @@ Route::post('lelang/show/{id}','LelangController@setpemenang')->name('admin.lela
 
 Route::get('lelang/edit/{id}','LelangController@edit')->name('admin.lelang.edit');
 
-Route::post('lelang','LelangController@update')->name('admin.lelang.update');
+Route::post('lelang/edit/{id}','LelangController@update')->name('admin.lelang.update');
 
 Route::delete('lelang/destroy/{id}','LelangController@destroy')->name('admin.lelang.destroy');
 
@@ -158,6 +160,12 @@ Route::get('lelang/trash','LelangController@trash')->name('admin.lelang.trash');
 Route::post('lelang/{id}/restore','LelangController@restore')->name('admin.lelang.restore');
 
 Route::delete('lelang/{id}/delete-permanent','LelangController@deletePermanent')->name('admin.lelang.delete-permanent');
+
+Route::get('lelang/on-progress','LelangController@onprogress')->name('admin.lelang.onprogress');
+
+Route::get('lelang/done','LelangController@done')->name('admin.lelang.done');
+
+Route::get('lelang/cancel','LelangController@cancel')->name('admin.lelang.cancel');
 
 // Manage Data Nelayan
 Route::get('nelayan','NelayanController@index')->name('admin.nelayan');

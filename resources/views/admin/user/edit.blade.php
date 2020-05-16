@@ -183,6 +183,8 @@
             <option  {{$user->status == 'Actived' ? "selected":""}} value="Actived">Aktif</option>
 
             <option  {{$user->status == 'Nonactived' ? "selected":""}} value="Nonactived">Tidak Aktif</option>
+
+            <option  {{$user->status == 'Submission' ? "selected":""}} value="Submission">Submission</option>
         </select>
 
         <div class="invalid-feedback">

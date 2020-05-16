@@ -44,7 +44,7 @@
 
           <div class="inner">
 
-            <h3>{{ $ikan }}</h3>  
+            <h3>{{ $ikan }} Kg</h3>  
             
             <p>Ikan</p>
             

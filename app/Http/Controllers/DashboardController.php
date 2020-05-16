@@ -23,7 +23,7 @@ class DashboardController extends Controller
     {
         $user = User::count();
         $nelayan = Nelayan::count();
-        $ikan = Ikan::count('qty');
+        $ikan = Ikan::sum('qty');
         $lelang = Lelang::count();
         return view ('admin.dashboard',compact('user','nelayan','ikan','lelang'));
     }

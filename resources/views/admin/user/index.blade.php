@@ -105,9 +105,13 @@
         
             <td>
         
+              @php
+              $num = (int)$data->no_hp;
+              @endphp
+
               <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"> Email</a>
 
-              <a href="mailto:{{ $data->no_hp }}" class="btn btn-success btn-sm"> Whatsapp</a>
+              <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm"> Whatsapp</a>
 
               <a href="{{route('admin.user.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             

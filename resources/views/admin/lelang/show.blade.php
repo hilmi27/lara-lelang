@@ -197,22 +197,27 @@
             
                             <td>
             
-                                <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"> Email</a>
+                                @php
+                                $num = (int)$data->user->no_hp;
+                                @endphp
+                                <a href="mailto:{{ $data->user->email }}" class="btn btn-danger btn-sm"> Email</a>
 
-                                <a href="mailto:{{ $data->no_hp }}" class="btn btn-success btn-sm"> Whatsapp</a>
+                                <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm"> Whatsapp</a>
 
                             </td>
 
                             <td>
 
                                 {{-- <a href="#" class="btn btn-success btn-sm"><i class="fa fa-check"></i> Set pemenang</a> --}}
-                                <form method="POST" action="{{route('admin.lelang.setpemenang', [$data->id])}}" class="d-inline" onsubmit="return confirm('Jadikan pemenang lelang ?')">
+                                <form method="POST" action="{{route('admin.lelang.setpemenang',$lelang->id)}}" class="d-inline" onsubmit="return confirm('Jadikan pemenang lelang ?')">
 
                                     @csrf
                 
                                         <input type="hidden" name="pemenang" value="{{ $data->user->id }}">
+
+                                        <input type="hidden" name="harga_akhir" value="{{ $data->bid }}">
                 
-                                        <input type="submit" class="btn btn-success btn-sm" value="Set pemenang">
+                                        <input type="submit" class="btn btn-success btn-sm">
                 
                                 </form>
 

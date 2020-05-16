@@ -152,24 +152,27 @@
                     </div>
 
                     @else
-                   
+                  
+                    @if (Auth::user()->status == 'Actived')
+                  
                     <form action="{{ route('front.lelang.bid') }}" method="POST">
+                  
                         @csrf
 
                         @if(session('success'))
 
                         <div class="alert alert-success"> 
 
-                            {{session('success')}}
-                      
-                        </div>
-                        
+                            {{session('success')}}                  
+          
+                        </div>          
+           
                         @endif  
 
-                    <div class="row">
-                     
-                        <input type="hidden" name="id_lelang" value="{{ $lelang->id }}">
-                     
+                        <div class="row">                 
+            
+                            <input type="hidden" name="id_lelang" value="{{ $lelang->id }}">    
+            
                             <div class="col-lg-6 col-md-6">
 
                                 <input type="number" name="bid" class="form-control">
@@ -178,28 +181,37 @@
 
                             <div class="col-lg-4 col-md-6">
 
-                                <div class="btn_add_to_cart">    
+                                <div class="btn_add_to_cart">           
            
                                     <button type="submit" class="btn_1">Bid</button>
 
-                                </div>    
-         
+                                </div>         
+              
                             </div> 
-         
-                        
-    
+
+                        </div>
+                    
+                    </form> 
+                   
+                    @elseif(Auth::user()->status == 'Submission')
+                   
+                    <div class="btn_add_to_cart">
+
+                        <a href="#" class="btn_1">Proses Verifikasi. Saat ini pengajuan anda menjadi member sedang proses verifikasi.</a>
+
                     </div>
-                </form> 
 
-                @endguest                      
-       
-            </div>
+                    @endif                   
+             
+                    @endguest                      
 
-        </div>    
-    
+                </div>
+
+            </div>        
+  
+        </div>
+
     </div>
-
-</div>
   
 <div class="tabs_product">
 
