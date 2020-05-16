@@ -111,7 +111,7 @@
 
             <td>Rp. {{ number_format($data->harga) }}</td>
 
-            <td>{{ $data->tgl_masuk }}</td>
+            <td>{{ \Carbon\Carbon::parse($data->tgl_masuk)->format('d/m/Y') }}</td>
 
             <td>{{ $data->wilayah_penangkapan }}</td>
         
@@ -141,10 +141,10 @@
         <tfoot>
           <tr>
             <th></th>
+            <th> </th>
             <th>Jumlah</th>
             <th>{{ $ikans }}</th>
-            <th> </th>
-            <th></th>
+            <th>Rp. {{ number_format($hargas) }}</th>
             <th></th>
             <th></th>
           </tr>

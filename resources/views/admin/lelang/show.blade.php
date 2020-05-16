@@ -217,7 +217,7 @@
 
                                         <input type="hidden" name="harga_akhir" value="{{ $data->bid }}">
                 
-                                        <input type="submit" class="btn btn-success btn-sm">
+                                        <input type="submit" class="btn btn-success btn-sm" value="Set pemenang">
                 
                                 </form>
 

@@ -89,7 +89,7 @@
                 
                 <div class="price_box">
                 
-                    <span class="new_price">Rp. {{ number_format($lelang->harga_awal) }}</span>
+                    <span class="new_price">Open Bid: Rp. {{ number_format($lelang->harga_awal) }}</span>
                 
                 </div>
             

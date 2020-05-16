@@ -14,6 +14,8 @@ use App\Jenisikan;
 
 use App\Wilayah;
 
+use Carbon\Carbon;
+
 class IkanController extends Controller
 {
     /**
@@ -25,7 +27,8 @@ class IkanController extends Controller
     {
         $ikan = Ikan::orderBy('id','desc')->get();
         $ikans = Ikan::sum('qty');
-        return view('admin.ikan.index',compact('ikan','ikans'));
+        $hargas = Ikan::sum('harga');
+        return view('admin.ikan.index',compact('ikan','ikans','hargas'));
     }
 
     /**
@@ -62,6 +65,7 @@ class IkanController extends Controller
         $ikan->jenis_ikan           = $request->jenis_ikan;
         $ikan->kualitas             = $request->kualitas;
         $ikan->ukuran               = $request->ukuran;
+        $ikan->qty_awal           = $request->qty;
         $ikan->qty                  = $request->qty;
         $ikan->harga                = $request->harga;
         $ikan->tgl_masuk            = $request->tgl_masuk;

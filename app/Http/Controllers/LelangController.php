@@ -10,6 +10,8 @@ use App\Jenisikan;
 
 use App\Bid;
 
+use App\Ikan;
+
 use Illuminate\Support\Str;
 
 class LelangController extends Controller
@@ -212,14 +214,16 @@ class LelangController extends Controller
        
         }   
 
-        if ($request->status == 'Cancel') {
-            $lelang_ = Lelang::where('id_ikan', $id_ikan)->get()->sum('qty');
+        if ($request->status == 'cancel') {
+            $lelang_ = Lelang::where('id_ikan', $id_ikan)->value('qty');
             $ikan = Ikan::find($id_ikan);
             $substract = intval($ikan->qty + $lelang_);
             $ikan->qty = $substract;
 
             $ikan->save();
+            // dd($ikan->id_ikan);
         }
+        
         // dd($lelang);
         if ($lelang->save()) {
 
