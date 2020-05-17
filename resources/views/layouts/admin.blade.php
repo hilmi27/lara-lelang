@@ -116,7 +116,7 @@
       
                             if (($a>=6) && ($a<=11)) {
       
-                              echo " <b> Selamat Pagi </b>";
+                              echo " <b> Selamat Pagi</b>";
       
                             }else if(($a>=11) && ($a<=15)){
       
@@ -774,21 +774,87 @@
                             @if (Auth::user()->role == 'Watcher')
                                 
                            
-                            <li class="nav-item">
+                            <li class="nav-item has-treeview">
       
-                                <a href="{{ route('admin.logout') }}" class="nav-link">
+                                <a href="#" class="nav-link">
       
-                                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                                    <i class="nav-icon fas fa-edit"></i>
       
                                     <p>
       
                                         Report
       
+                                        <i class="fas fa-angle-left right"></i>
+      
                                     </p>
       
                                 </a>
       
-                            </li> 
+                                <ul class="nav nav-treeview">
+      
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.report.ikan') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data Ikan</p>
+      
+                                        </a>
+      
+                                    </li>
+      
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.report.lelang') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data Lelang</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.report.nelayan') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data Nelayan</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.report.user') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data User</p>
+      
+                                        </a>
+      
+                                    </li>
+
+                                    <li class="nav-item">
+      
+                                        <a href="{{ route('admin.report.staff') }}" class="nav-link">
+      
+                                            <i class="far fa-circle nav-icon"></i>
+      
+                                            <p>Data Staff</p>
+      
+                                        </a>
+      
+                                    </li>
+      
+                                </ul>
+      
+                            </li>
 
                             @endif
 

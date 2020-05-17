@@ -291,62 +291,6 @@
         </div>
 
       </div>  
-
-      <div class="form-group">
-
-        <label for="link_fb">Link Facebook</label>
-
-        <input type="text" name="link_fb" value="{{old('link_fb') ? old('link_fb') : $gs->link_fb}}" class="form-control  {{$errors->first('link') ? "is-invalid" : ""}}" id="link" placeholder="Masukkan link banner">
-
-        <div class="invalid-feedback">
-
-            {{$errors->first('link_fb')}}
-
-        </div>
-
-      </div>  
-
-      <div class="form-group">
-
-        <label for="link_ig">Link Instagram</label>
-
-        <input type="text" name="link_ig" value="{{old('link_ig') ? old('link_ig') : $gs->link_ig}}" class="form-control  {{$errors->first('link') ? "is-invalid" : ""}}" id="link" placeholder="Masukkan link banner">
-
-        <div class="invalid-feedback">
-
-            {{$errors->first('link_ig')}}
-
-        </div>
-
-      </div>  
-
-      <div class="form-group">
-
-        <label for="link_tw">Link Twitter</label>
-
-        <input type="text" name="link_tw" value="{{old('link_tw') ? old('link_tw') : $gs->link_tw}}" class="form-control  {{$errors->first('link') ? "is-invalid" : ""}}" id="link" placeholder="Masukkan link banner">
-
-        <div class="invalid-feedback">
-
-            {{$errors->first('link_tw')}}
-
-        </div>
-
-      </div>  
-
-      <div class="form-group">
-
-        <label for="link_web">Link Website</label>
-
-        <input type="text" name="link_web" value="{{old('link_web') ? old('link_web') : $gs->link_web}}" class="form-control  {{$errors->first('link') ? "is-invalid" : ""}}" id="link" placeholder="Masukkan link banner">
-
-        <div class="invalid-feedback">
-
-            {{$errors->first('link_web')}}
-
-        </div>
-
-      </div>
       
       <div class="form-group">
 

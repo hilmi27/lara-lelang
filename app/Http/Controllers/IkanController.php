@@ -158,7 +158,6 @@ class IkanController extends Controller
        
         }   
 
-        dd($ikan);
         if ($ikan->save()) {
 
             return redirect()->route('admin.ikan')->with('success','Data ikan berhasil diupdate');

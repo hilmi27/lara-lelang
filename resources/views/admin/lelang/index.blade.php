@@ -103,9 +103,9 @@
 
             <td>{{ $data->qty }}</td>
 
-            <td>{{ $data->harga_awal }}</td>
+            <td>Rp. {{ number_format($data->harga_awal) }}</td>
 
-            <td>{{ $data->tgl_lelang }}</td>
+            <td>{{ \Carbon\Carbon::parse($data->tgl_lelang)->format('d/m/Y') }}</td>
 
             <td>{{ $data->status }}</td>
         

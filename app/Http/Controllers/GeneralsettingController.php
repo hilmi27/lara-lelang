@@ -87,10 +87,6 @@ class GeneralsettingController extends Controller
         $gs->address = $request->address;
         $gs->phone = $request->phone;
         $gs->email = $request->email;
-        $gs->link_fb = $request->link_fb;
-        $gs->link_tw = $request->link_tw;
-        $gs->link_ig = $request->link_ig;
-        $gs->link_web = $request->link_web;
         $gs->maps = $request->maps;
         $gs->footer = $request->footer;
        

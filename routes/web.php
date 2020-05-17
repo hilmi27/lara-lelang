@@ -212,6 +212,16 @@ Route::post('general-setting/edit/{id}','GeneralsettingController@update')->name
 
 // Route::post('general-setting/edit/favicon/{id}','GeneralsettingController@faviconupdate')->name('admin.generalsetting.faviconupdate');
 
+Route::get('report/ikan','ReportController@ikanprint')->name('admin.report.ikan');
+
+Route::get('report/lelang','ReportController@lelangprint')->name('admin.report.lelang');
+
+Route::get('report/nelayan','ReportController@nelayanprint')->name('admin.report.nelayan');
+
+Route::get('report/user','ReportController@userprint')->name('admin.report.user');
+
+Route::get('report/staff','ReportController@staffprint')->name('admin.report.staff');
+
 });
 
 });

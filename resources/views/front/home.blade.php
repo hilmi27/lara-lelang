@@ -83,7 +83,7 @@
                 
                 <a href="product-detail-1.html">
                 
-                    <h3>{{ $lelang->jenis_ikan }}</h3>
+                    <h3>{{ $lelang->title }}</h3>
                 
                 </a>
                 

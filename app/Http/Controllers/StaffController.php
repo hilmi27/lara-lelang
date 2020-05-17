@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Admin;
 
+use Mail;
+
+use App\Mail\StaffMail;
+
 class StaffController extends Controller
 {
     /**
@@ -60,6 +64,7 @@ class StaffController extends Controller
           
         if ($staff->save()) {
 
+            Mail::to($request->email)->send(new StaffMail());
             return redirect()->route('admin.staff')->with('success','Data staff berhasil ditambahkan');
     
         } else {
