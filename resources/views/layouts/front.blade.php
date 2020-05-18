@@ -14,20 +14,11 @@
 
     <meta name="author" content="Ansonika">
 
-    {{-- <title>{{ $gs->title }}</title> --}}
-    <title>Lelang</title>
+    <title>{{ $gs->title }}</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="{{ asset('admin/gs/favicon-1589367156Fish_icon-icons.com_67594.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('admin/gs/'.$gs->favicon) }}" type="image/x-icon">
 
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('front/img/apple-touch-icon-57x57-precomposed.png') }}">
-
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{asset('front/img/apple-touch-icon-72x72-precomposed.png')}}">
-
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{asset('front/img/apple-touch-icon-114x114-precomposed.png')}}">
-
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{asset('front/img/apple-touch-icon-144x144-precomposed.png')}}">
-	
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
@@ -66,9 +57,7 @@
 
                                 <a href="{{ route('front') }}">
        
-                                    {{-- <img src="{{ asset('front/img/logo.svg') }}" alt="" width="100" height="35"> --}}
-       
-                                    <h3 style="color: white">Lelang</h3>                   
+                                    <img src="{{ asset('admin/gs/'.$gs->logo) }}" alt="" width="100" height="35">            
           
                                 </a>
 
@@ -221,7 +210,7 @@
              
                             <li><a href="#0">Privacy</a></li> --}}
              
-                            <li><span>2020 - Lelang.online</span></li>
+                            <li><span>{{ $gs->footer }}</span></li>
 
                         </ul>    
              

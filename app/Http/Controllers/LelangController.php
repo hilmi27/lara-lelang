@@ -12,6 +12,10 @@ use App\Bid;
 
 use App\Ikan;
 
+use Mail;
+
+use App\Mail\SetPemenangMail;
+
 use Illuminate\Support\Str;
 
 class LelangController extends Controller
@@ -142,6 +146,8 @@ class LelangController extends Controller
             $lelang->status = 'done';
 
             $lelang->save();
+
+            Mail::to($request->emailpemenang)->send(new SetPemenangMail());
 
             return redirect()->route('admin.lelang')->with('success','Pemenang lelang no. '.$id.' telah ditentukan');
     

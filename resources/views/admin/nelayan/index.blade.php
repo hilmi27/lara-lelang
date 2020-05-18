@@ -12,7 +12,7 @@
   
         <div class="col-sm-6">
   
-          <h1 class="m-0 text-dark">Data Jenis Ikan</h1>
+          <h1 class="m-0 text-dark">Data Nelayan</h1>
   
         </div><!-- /.col -->
   

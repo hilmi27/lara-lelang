@@ -200,10 +200,10 @@
                                 @php
                                 $num = (int)$data->user->no_hp;
                                 @endphp
-                                <a href="mailto:{{ $data->user->email }}" class="btn btn-danger btn-sm"> Email</a>
+                                <a href="mailto:{{ $data->user->email }}" class="btn btn-danger btn-sm" target="_blank"> Email</a>
 
-                                <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm"> Whatsapp</a>
-
+                                <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm" target="_blank"> Whatsapp</a>
+                                
                             </td>
 
                             <td>
@@ -213,6 +213,8 @@
 
                                     @csrf
                 
+                                        <input type="hidden" name="emailpemenang" value="{{ $data->user->email }}">
+                                        
                                         <input type="hidden" name="pemenang" value="{{ $data->user->id }}">
 
                                         <input type="hidden" name="harga_akhir" value="{{ $data->bid }}">

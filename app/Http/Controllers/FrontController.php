@@ -26,7 +26,7 @@ class FrontController extends Controller
 {
 
     public function home(){
-        $gs = Generalsetting::all();
+        $gs = Generalsetting::find(1);
         $banner = Bannerslider::all();
         $poplelang = Lelang::orderBy('views','desc')->where('status','=','on progress')->limit(8)->get();
         $newlelang = Lelang::orderBy('id','desc')->where('status','=','on progress')->limit(8)->get();
@@ -58,7 +58,7 @@ class FrontController extends Controller
     
         $lelang->update();
 
-        $gs = Generalsetting::all();
+        $gs = Generalsetting::find(1);
 
         $bid = Bid::where('id_lelang','=', $id)->orderBy('bid','desc')->get();
 

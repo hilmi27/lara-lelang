@@ -88,6 +88,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        \Validator::make($request->all(), [
+            "name" => "required",
+            "email" => "required",
+            "password" => "required",
+            "status" => "required",       
+        ]
+        ,[
+            "status.required" => "Status tidak boleh kosong."
+        ]
+        )->validate();
+        
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;

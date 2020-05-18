@@ -8,6 +8,10 @@ use App\Bid;
 
 use Auth;
 
+use Mail;
+
+use App\Mail\UserBidMail;
+
 class BidController extends Controller
 {
     /**
@@ -45,6 +49,8 @@ class BidController extends Controller
 
         // dd($bid);
         if ($bid->save()) {
+            Mail::to('hilmiudon@gmail.com')->send(new UserBidMail());
+            
             return redirect()->back()->with('success','Penawaran berhasil ditambahkan');
         } else {
            return redirect()->back()->with('error','Penawaran gagal ditambahkan');
