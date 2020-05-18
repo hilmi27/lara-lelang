@@ -65,15 +65,15 @@
  
             <th>No.</th>
  
+            <th>Favicon</th>
+
             <th>Logo</th>
+
+            <th>Bg Title</th>
 
             <th>Title</th>
 
             <th>Address</th>
-            
-            <th>Phone</th>
-
-            <th>Email</th>
  
             <th>Action</th>
  
@@ -96,17 +96,21 @@
             <td>{{ ++$no }}</td>
         
             <td>
-                <img src="{{ $data->logo ? asset('admin/gs/'.$data->logo):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="">
+              <img src="{{ $data->favicon ? asset('admin/gs/'.$data->favicon):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="" height="100px" width="100px">
+            </td>
+
+            <td>
+                <img src="{{ $data->logo ? asset('admin/gs/'.$data->logo):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="" height="100px" width="200px">
+            </td>
+
+            <td>
+              <img src="{{ $data->bg_title ? asset('admin/gs/'.$data->bg_title):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="" height="100px" width="300px">
             </td>
 
             <td>{{ $data->title }}</td>
 
             <td>{{ $data->address }}</td>
 
-            <td>{{ $data->phone }}</td>
-
-            <td>{{ $data->email }}</td>
-        
             <td>
         
               <a href="{{route('admin.generalsetting.edit', [$data->id])}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>                

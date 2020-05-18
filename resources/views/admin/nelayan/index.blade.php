@@ -107,7 +107,13 @@
         
             <td>
         
-              <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm"> Email</a>
+              @php
+              $num = (int)$data->no_hp;
+              @endphp
+
+              <a href="mailto:{{ $data->email }}" class="btn btn-danger btn-sm" target="_blank"> Email</a>
+
+              <a href="https://wa.me/62{{ $num }}" class="btn btn-success btn-sm" target="_blank"> Whatsapp</a>
 
               <a href="{{route('admin.nelayan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             

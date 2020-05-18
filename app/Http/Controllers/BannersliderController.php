@@ -103,9 +103,7 @@ class BannersliderController extends Controller
     public function update(Request $request, $id)
     {
         \Validator::make($request->all(), [
-            "photo"=> "required",
-            "title" => "required|max:50",
-            "note" => "max:50",        
+            "photo"=> "required",   
         ])->validate();
 
         $banner = Bannerslider::findOrFail($id);

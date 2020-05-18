@@ -31,8 +31,6 @@ class FrontController extends Controller
         $poplelang = Lelang::orderBy('views','desc')->where('status','=','on progress')->limit(8)->get();
         $newlelang = Lelang::orderBy('id','desc')->where('status','=','on progress')->limit(8)->get();
 
-        // Mail::to('hilmihidayat175@gmail.com')->send(new UserRegisterMail());
-
         return view('front.home',compact('banner','gs','poplelang','newlelang'));
     }
 

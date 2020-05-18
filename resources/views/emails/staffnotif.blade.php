@@ -350,7 +350,7 @@
                     <tr>
                       <td>
                         <p>Hi,</p>
-                        <p>Anda telah ditambahkan menjadi staff Lelang.Online, sekarang anda bisa login ke admin panel lelang.online.</p>
+                        <p>Anda telah ditambahkan menjadi staff Lelang.Online, sekarang anda bisa login ke admin panel lelang online.</p>
                         <br>
                         <p>Best Regards</p><br>
                         <p>Admin</p>
@@ -369,7 +369,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">Lelang Online</span>
+                    <span class="apple-link">Perum Perikanan Indonesia</span>
                   </td>
                 </tr>
               </table>

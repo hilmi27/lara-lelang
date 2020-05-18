@@ -103,9 +103,9 @@
 
             <td>{{ $data->qty }}</td>
 
-            <td>{{ $data->harga }}</td>
+            <td>Rp. {{ number_format($data->harga) }}</td>
 
-            <td>{{ $data->tgl_masuk }}</td>
+            <td>{{ \Carbon\Carbon::parse($data->tgl_masuk)->format('d/m/Y') }}</td>
 
             <td>{{ $data->wilayah_penangkapan }}</td>
         

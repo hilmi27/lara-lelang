@@ -2,8 +2,6 @@
 
 @section('content')
   
-  <!-- Content Header (Page header) -->
-  
   <div class="content-header">
   
     <div class="container-fluid">
@@ -14,7 +12,7 @@
   
           <h1 class="m-0 text-dark">Data Banner Slider</h1>
   
-        </div><!-- /.col -->
+        </div>
   
         <div class="col-sm-6">
   
@@ -26,15 +24,14 @@
   
           </ol>
   
-        </div><!-- /.col -->
+        </div>
   
-      </div><!-- /.row -->
+      </div>
   
-    </div><!-- /.container-fluid -->
+    </div>
   
   </div>
-  
-  <!-- /.content-header -->
+
   @if(session('success'))
 
   <div class="alert alert-success">
@@ -56,8 +53,6 @@
       </a>
  
     </div>
- 
-    <!-- /.card-header -->
  
     <div class="card-body">
  
@@ -120,8 +115,6 @@
       </table>
 
     </div>
-
-    <!-- /.card-body -->
 
   </div>
 

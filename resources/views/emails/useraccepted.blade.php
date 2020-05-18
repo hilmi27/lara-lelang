@@ -350,7 +350,7 @@
                     <tr>
                       <td>
                         <p>Hi,</p>
-                        <p>Selamat, anda telah disetujui menjadi member. Sekarang anda bisa melakukan penawaran di lelang.online.</p>
+                        <p>Selamat, anda telah disetujui menjadi member. Sekarang anda bisa melakukan penawaran di lelang Perum Perikanan Indonesia.</p>
                         <br>
                         <p>Best Regards</p><br>
                         <p>Admin</p>
@@ -369,7 +369,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">Lelang Online</span>
+                    <span class="apple-link">Perum Perikanan Indonesia</span>
                   </td>
                 </tr>
               </table>

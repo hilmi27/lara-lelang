@@ -10,6 +10,8 @@ use Auth;
 
 use Mail;
 
+use App\Admin;
+
 use App\Mail\UserBidMail;
 
 class BidController extends Controller
@@ -42,18 +44,26 @@ class BidController extends Controller
      */
     public function store(Request $request)
     {
+        $operator = Admin::where('role','=','Operator')->get();
         $bid = new Bid();
         $bid->id_lelang = $request->id_lelang;
         $bid->id_user = Auth::user()->id;
         $bid->bid = $request->bid;
 
-        // dd($bid);
+        // dd($operator);
         if ($bid->save()) {
-            Mail::to('hilmiudon@gmail.com')->send(new UserBidMail());
+
+            foreach ($operator as $operator ) {
             
+            Mail::to($operator->email)->send(new UserBidMail());
+            
+        }
+
             return redirect()->back()->with('success','Penawaran berhasil ditambahkan');
+        
         } else {
-           return redirect()->back()->with('error','Penawaran gagal ditambahkan');
+        
+            return redirect()->back()->with('error','Penawaran gagal ditambahkan');
         }
         
     }

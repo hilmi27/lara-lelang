@@ -350,7 +350,7 @@
                     <tr>
                       <td>
                         <p>Hi,</p>
-                        <p>Selamat ya, anda telah kami tetapkan sebagai pemenang lelang. Silahkan konfirmasi dengan balas email ini atau dengan hubungi nomor 0821111111</p>
+                        <p>Selamat, anda telah kami tetapkan sebagai pemenang lelang. Silahkan konfirmasi dengan balas email ini atau dengan hubungi nomor (021) 6694822</p>
                         <br>
                         <p>Best Regards</p><br>
                         <p>Admin</p>
@@ -369,7 +369,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">Lelang Online</span>
+                    <span class="apple-link">Perum Perikanan Indonesia</span>
                   </td>
                 </tr>
               </table>

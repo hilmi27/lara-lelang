@@ -143,7 +143,7 @@
             <th></th>
             <th> </th>
             <th>Jumlah</th>
-            <th>{{ $ikans }}</th>
+            <th>{{ $ikans }} Kg</th>
             <th>Rp. {{ number_format($hargas) }}</th>
             <th></th>
             <th></th>

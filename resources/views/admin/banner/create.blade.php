@@ -42,8 +42,6 @@
 
 @section('content')
 
-<!-- Content Header (Page header) -->
-
 <div class="content-header">
 
   <div class="container-fluid">
@@ -54,7 +52,7 @@
 
         <h1 class="m-0 text-dark">Data Banner Slider</h1>
 
-      </div><!-- /.col -->
+      </div>
 
       <div class="col-sm-6">
 
@@ -66,15 +64,13 @@
 
         </ol>
 
-      </div><!-- /.col -->
+      </div>
 
-    </div><!-- /.row -->
+    </div>
 
-  </div><!-- /.container-fluid -->
+  </div>
 
 </div>
-
-<!-- /.content-header -->
 
 @if(session('error'))
 
@@ -87,10 +83,6 @@
 @endif
 
 <div class="card card-primary">
-
-  <!-- /.card-header -->
-
-  <!-- form start -->
 
   <form role="form" action="{{ route('admin.banner.store') }}" method="POST" enctype="multipart/form-data">
 
@@ -159,9 +151,7 @@
       </div>     
       
     </div>
-    
-    <!-- /.card-body -->
-
+  
     <div class="card-footer" >
 
       <button type="submit" class="btn btn-primary">Submit</button>

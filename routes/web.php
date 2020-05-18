@@ -186,7 +186,8 @@ Route::post('nelayan/{id}/restore','NelayanController@restore')->name('admin.nel
 
 Route::delete('nelayan/{id}/delete-permanent','NelayanController@deletePermanent')->name('admin.nelayan.delete-permanent');
 
-
+// Manage Cabang
+Route::get('cabang','CabangController@index')->name('admin.cabang');
 // Setting
 // Banner Slider
 Route::get('banner-slider','BannersliderController@index')->name('admin.banner');
@@ -207,8 +208,6 @@ Route::get('general-setting','GeneralsettingController@index')->name('admin.gene
 Route::get('general-setting/edit/{id}','GeneralsettingController@edit')->name('admin.generalsetting.edit');
 
 Route::post('general-setting/edit/{id}','GeneralsettingController@update')->name('admin.generalsetting.update');
-
-// Route::get('general-setting/edit/favicon/{id}','GeneralsettingController@favicon')->name('admin.generalsetting.favicon');
 
 // Route::post('general-setting/edit/favicon/{id}','GeneralsettingController@faviconupdate')->name('admin.generalsetting.faviconupdate');
 

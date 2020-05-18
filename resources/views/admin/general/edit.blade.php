@@ -92,15 +92,13 @@
 
         </ol>
 
-      </div><!-- /.col -->
+      </div>
 
-    </div><!-- /.row -->
+    </div>
 
-  </div><!-- /.container-fluid -->
+  </div>
 
 </div>
-
-<!-- /.content-header -->
 
 @if(session('error'))
 
@@ -114,91 +112,19 @@
 
 <div class="card card-primary">
 
-  <!-- /.card-header -->
-
-  <!-- form start -->
-
   <form role="form" action="{{ route('admin.generalsetting.update',$gs->id) }}" method="POST" enctype="multipart/form-data">
 
     @csrf
 
     <div class="card-body">
 
-      {{-- <div class="form-group">
-
-        <div class="favicon-container">
-
-            <div class="favicon">
-
-                <img src="{{ $gs->favicon ? asset('admin/gs/'.$gs->favicon):'http://fulldubai.com/SiteImages/noimage.png'}}" class="picture-src" id="wizardPicturePreview" height="200px" width="200px" title=""/>
-
-                <input type="file" id="wizard-picture" name="favicon">
-
-            </div>
-
-        </div>
-
-      </div>  
-      
-      <div class="form-group">
-
-        <div class="picture-container">
-
-            <div class="picture">
-
-                <img src="{{ $gs->logo ? asset('admin/gs/'.$gs->logo):'http://fulldubai.com/SiteImages/noimage.png'}}" class="picture-src" id="wizardPicturePreview" height="200px" width="400px" title=""/>
-
-                <input type="file" id="wizard-picture" name="favicon">
-
-            </div>
-
-            <h6>Pilih Logo</h6>
-
-        </div>
-
-      </div>   
-
-      <div class="form-group">
-
-        <div class="picture-container">
-
-            <div class="picture">
-
-                <img src="{{ $gs->bg_title ? asset('admin/gs/'.$gs->bg_title):'http://fulldubai.com/SiteImages/noimage.png'}}" class="picture-src" id="wizardPicturePreview" height="200px" width="400px" title=""/>
-
-                <input type="file" id="wizard-picture" name="bg_title">
-
-            </div>
-
-            <h6>Pilih Background Title</h6>
-
-        </div>
-
-      </div>  
-      
-      <div class="form-group">
-
-        <div class="picture-container">
-
-            <div class="picture">
-
-                <img src="{{ $gs->banner_mid ? asset('admin/gs/'.$gs->banner_mid):'http://fulldubai.com/SiteImages/noimage.png'}}" class="picture-src" id="wizardPicturePreview" height="200px" width="400px" title=""/>
-
-                <input type="file" id="wizard-picture" name="banner_mid">
-
-            </div>
-
-            <h6>Pilih Banner Mid</h6>
-
-        </div>
-
-      </div>    --}}
-      
       <div class="form-group">
 
         <label for="favicon">Favicon</label>
 
-        <input type="file" name="favicon" value="{{old('favicon') ? old('favicon') : $gs->favicon}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}" id="title" placeholder="Masukkan judul banner">
+        <input type="file" name="favicon" value="{{old('favicon') ? old('favicon') : $gs->favicon}}" class="form-control  {{$errors->first('favicon') ? "is-invalid" : ""}}" id="favicon" placeholder="Masukkan favicon">
+
+        <input type="hidden" name="favicon" value="{{ asset('admin/gs/'.$gs->favicon) }}">
 
         <div class="invalid-feedback">
 
@@ -212,7 +138,9 @@
 
         <label for="logo">Logo</label>
 
-        <input type="file" name="logo" value="{{old('logo') ? old('logo') : $gs->logo}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}" id="title" placeholder="Masukkan judul banner">
+        <input type="file" name="logo" value="{{old('logo') ? old('logo') : $gs->logo}}" class="form-control  {{$errors->first('logo') ? "is-invalid" : ""}}" id="logo" placeholder="Masukkan logo">
+
+        <input type="hidden" name="logo" value="{{ asset('admin/gs/'.$gs->logo) }}">
 
         <div class="invalid-feedback">
 
@@ -226,7 +154,9 @@
 
         <label for="bg_title">Background Title</label>
 
-        <input type="file" name="bg_title" value="{{old('bg_title') ? old('bg_title') : $gs->bg_title}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}" id="title" placeholder="Masukkan judul banner">
+        <input type="file" name="bg_title" value="{{old('bg_title') ? old('bg_title') : $gs->bg_title}}" class="form-control  {{$errors->first('bg_title') ? "is-invalid" : ""}}" id="bg_title" placeholder="Masukkan background title">
+
+        <input type="hidden" name="bg_title" value="{{ asset('admin/gs/'.$gs->bg_title) }}">
 
         <div class="invalid-feedback">
 
