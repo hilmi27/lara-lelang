@@ -89,10 +89,6 @@
 
 <div class="card card-primary">
 
-  <!-- /.card-header -->
-
-  <!-- form start -->
-
   <form role="form" action="{{ route('admin.ikan.update',$ikan->id) }}" method="POST" >
 
     @csrf
@@ -163,7 +159,7 @@
 
         <div class="invalid-feedback">
 
-            {{$errors->first('alamat')}}
+            {{$errors->first('kualitas')}}
 
         </div>
 

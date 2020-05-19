@@ -102,98 +102,42 @@
 
                             <th>Alamat</th>
 
-                            <th>Kontak</th>
+                            <th>Email</th>
+
+                            <th>Telephone</th>
         
                         </tr>
         
                     </thead>
                   
+                    @php
+                        $no = 0;
+                    @endphp
+                    
                     <tbody>
                   
+                        @foreach ($cabang as $data)
+                            
                         <tr>
                   
-                            <td>1.</td>
+                            <td>{{ ++$no }}</td>
                   
-                            <td>Jakarta</td>
+                            <td>{{ $data->name }}</td>
 
-                            <td>Perum Perikanan Cabang Jakarta Jl.Muara Baru Ujung Penjaringan Jakarta Utara 14440</td>
+                            <td>{{ $data->address }}.
+                            @if (!empty($data->link_maps))
+                            <a href="{{ $data->link_maps }}" target="_blank">Lihat Maps</a>   
+                            @endif
+                            </td>
 
-                            <td>(+6221) 6694822</td>
+                            <td>{{ $data->email }}</td>
+                            
+                            <td>{{ $data->phone }}</td>
                   
                         </tr>
 
-                        <tr>
-                  
-                            <td>2.</td>
-                  
-                            <td>Medan</td>
+                        @endforeach
 
-                            <td>Pelabuhan Perikanan Samudera Cabang Belawan, kota Medan, Sumatera Utara</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-
-                        <tr>
-                  
-                            <td>3.</td>
-                  
-                            <td>Brondong</td>
-
-                            <td>Pelabuhan Perikanan Nusantara Brondong, Kec. Brondong, Kabupaten Lamongan, Jawa Timur 62263</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-
-                        <tr>
-                  
-                            <td>4.</td>
-                  
-                            <td>Pekalongan</td>
-
-                            <td>Jl. Wage Rudof Supratman No.2, Panjang Wetan, Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51141</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-
-                        <tr>
-                  
-                            <td>5.</td>
-                  
-                            <td>Pemangkat</td>
-
-                            <td>Pelabuhan Perikanan Nusantara Pemangkat, Provinsi Kalimantan Barat</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-
-                        <tr>
-                  
-                            <td>6.</td>
-                  
-                            <td>Prigi</td>
-
-                            <td>JL Tasik Madu, Gares Kidul, Prigi, Watulimo, Kabupaten Trenggalek, Jawa Timur 66382</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-
-                        <tr>
-                  
-                            <td>7.</td>
-                  
-                            <td>Karawang</td>
-
-                            <td>Pusakajaya Utara, Cilebar, Kabupaten Karawang, Jawa Barat 41353</td>
-
-                            <td>-</td>
-                  
-                        </tr>
-                  
                     </tbody>
         
                 </table>

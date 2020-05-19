@@ -334,6 +334,9 @@
                                 </ul>
       
                             </li>   
+
+                           
+
                             @elseif(Auth::user()->role == 'Operator')
                             <li class="nav-item has-treeview">
 
@@ -674,6 +677,22 @@
                                     </li>
       
                                 </ul>
+      
+                            </li>
+
+                            <li class="nav-item has-treeview">
+      
+                                <a href="{{ route('admin.cabang') }}" class="nav-link">
+      
+                                    <i class="nav-icon fas fa-edit"></i>
+      
+                                    <p>
+      
+                                        Data Cabang
+      
+                                    </p>
+      
+                                </a>
       
                             </li>
 

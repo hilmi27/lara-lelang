@@ -188,6 +188,17 @@ Route::delete('nelayan/{id}/delete-permanent','NelayanController@deletePermanent
 
 // Manage Cabang
 Route::get('cabang','CabangController@index')->name('admin.cabang');
+
+Route::get('cabang/create','CabangController@create')->name('admin.cabang.create');
+
+Route::post('cabang/create','CabangController@store')->name('admin.cabang.store');
+
+Route::get('cabang/edit/{id}','CabangController@edit')->name('admin.cabang.edit');
+
+Route::post('cabang/edit/{id}','CabangController@update')->name('admin.cabang.update');
+
+Route::delete('cabang/destroy/{id}','CabangController@destroy')->name('admin.cabang.destroy');
+
 // Setting
 // Banner Slider
 Route::get('banner-slider','BannersliderController@index')->name('admin.banner');

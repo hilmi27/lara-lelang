@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Cabang;
+
 class CabangController extends Controller
 {
     /**
@@ -24,7 +26,7 @@ class CabangController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cabang.create');
     }
 
     /**
@@ -35,7 +37,29 @@ class CabangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Validator::make($request->all(), [
+            "name"=> "required",
+            "address" => "required",
+              
+        ])->validate();
+
+
+        $cabang = new Cabang();
+        $cabang->name = $request->name;
+        $cabang->address = $request->address;
+        $cabang->link_maps = $request->link_maps;
+        $cabang->email = $request->email;
+        $cabang->phone = $request->phone;
+
+        if ($cabang->save()) {
+
+            return redirect()->route('admin.cabang')->with('success','Data cabang berhasil ditambahkan');
+    
+        } else {
+    
+            return redirect()->back()->with('error','Data gagal ditambahkan');
+    
+        }
     }
 
     /**
@@ -57,7 +81,8 @@ class CabangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cabang = Cabang::findOrFail($id);
+        return view('admin.cabang.edit',compact('cabang'));
     }
 
     /**
@@ -69,7 +94,29 @@ class CabangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        \Validator::make($request->all(), [
+            "name"=> "required",
+            "address" => "required",
+              
+        ])->validate();
+
+
+        $cabang = Cabang::findOrFail($id);
+        $cabang->name = $request->name;
+        $cabang->address = $request->address;
+        $cabang->link_maps = $request->link_maps;
+        $cabang->email = $request->email;
+        $cabang->phone = $request->phone;
+
+        if ($cabang->save()) {
+
+            return redirect()->route('admin.cabang')->with('success','Data cabang berhasil ditambahkan');
+    
+        } else {
+    
+            return redirect()->back()->with('error','Data gagal ditambahkan');
+    
+        }
     }
 
     /**
@@ -80,6 +127,10 @@ class CabangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cabang = Cabang::findOrFail($id);
+        
+        $cabang->delete();
+
+       return redirect()->route('admin.cabang')->with('success','Data cabang berhasil dihapus');
     }
 }

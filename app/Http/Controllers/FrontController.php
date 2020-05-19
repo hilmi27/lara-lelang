@@ -14,6 +14,8 @@ use App\Bid;
 
 use App\User;
 
+use App\Cabang;
+
 use DB;
 
 use Mail;
@@ -68,7 +70,8 @@ class FrontController extends Controller
 
     public function contact(){
         $gs = Generalsetting::all();
-        return view('front.contact',compact('gs'));
+        $cabang = Cabang::orderBy('name','desc')->get();
+        return view('front.contact',compact('gs','cabang'));
     }
 
 }
