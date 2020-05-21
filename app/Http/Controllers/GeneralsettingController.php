@@ -149,11 +149,11 @@ class GeneralsettingController extends Controller
 
         if ($gs->save()) {
 
-            return redirect()->route('admin.generalsetting')->with('success','Data general berhasil diupdate');
+            return redirect()->route('admin.generalsetting')->with('success','Data general berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }

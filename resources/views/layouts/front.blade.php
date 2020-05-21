@@ -99,7 +99,7 @@
 
                                     <li>                
          
-                                        <a href="{{ route('front') }}">Home</a>       
+                                        <a href="{{ route('front') }}">Beranda</a>       
         
                                     </li>
 
@@ -111,7 +111,7 @@
 
                                     <li>                
                    
-                                        <a href="{{ route('front.contact') }}">Contact</a>
+                                        <a href="{{ route('front.contact') }}">Kontak Kami</a>
 
                                     </li> 
                
@@ -129,7 +129,7 @@
 
                                     <div class="dropdown dropdown-access">                
                      
-                                        <a href="account.html" class="access_link"><span>Account</span></a>
+                                        <a href="account.html" class="access_link"><span>Akun</span></a>
 
                                         <div class="dropdown-menu">
 
@@ -137,7 +137,7 @@
 
                                             @guest
 
-                                            <a href="{{ route('login') }}" class="btn_1">Sign In or Sign Up</a>                                        
+                                            <a href="{{ route('login') }}" class="btn_1">Masuk atau Daftar</a>                                        
                   
                                             @else
                   
@@ -154,7 +154,7 @@
                                                 <li>                
                          
                                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">Log out</a>    
+                                                    document.getElementById('logout-form').submit();">Keluar</a>    
                                                     
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                         @csrf

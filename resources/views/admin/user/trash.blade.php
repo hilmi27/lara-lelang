@@ -75,7 +75,7 @@
 
             <th>No. HP</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -113,13 +113,13 @@
                     
                 </form>
 
-                <form method="POST" action="{{route('admin.user.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Delete this nelayan permanently?')">
+                <form method="POST" action="{{route('admin.user.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Apakah kamu yakin ingin menghapus permanen ?')">
 
                     @csrf
 
                         <input type="hidden" name="_method" value="DELETE">
 
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Hapus Permanen" class="btn btn-danger btn-sm">
 
                     </form>
             </td>

@@ -77,7 +77,7 @@
 
             <th>Role</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -111,13 +111,13 @@
 
               <a href="{{route('admin.staff.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
-              <form class="d-inline" action="{{route('admin.staff.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+              <form class="d-inline" action="{{route('admin.staff.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Apakah kamu yakin ?')">
 
                 @csrf 
          
                 <input type="hidden" value="DELETE" name="_method">
                 
-                <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                <input type="submit" class="btn btn-danger btn-sm" value="Hapus">
 
               </form>
 

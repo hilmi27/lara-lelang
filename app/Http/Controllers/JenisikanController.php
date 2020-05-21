@@ -92,9 +92,9 @@ class JenisikanController extends Controller
         $jenisikan->name = $request->name;
 
         if ($jenisikan->save()) {
-            return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil diupdate');
+            return redirect()->route('admin.jenisikan')->with('success','Data jenis ikan berhasil diperbarui');
         } else {
-            return redirect()->back()->with('error','Data gagal ditambahkan');
+            return redirect()->back()->with('error','Data gagal diperbarui');
         }
         
     }

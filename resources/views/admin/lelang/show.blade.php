@@ -165,7 +165,7 @@
    
             <div class="col-md-6">
    
-                <label for="">List Penawaran</label>
+                <label for="">Daftar Penawaran</label>
    
                 <table class="table table-hover">
 
@@ -175,11 +175,11 @@
 
                             <th>Username</th>
 
-                            <th>Bidding</th>
+                            <th>Penawaran</th>
 
-                            <th>Contact</th>
+                            <th>Kontak</th>
 
-                            <th>Action</th>
+                            <th>Aksi</th>
 
                         </tr>
 

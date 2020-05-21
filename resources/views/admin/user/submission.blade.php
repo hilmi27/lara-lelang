@@ -75,7 +75,7 @@
 
             <th>No. HP</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  

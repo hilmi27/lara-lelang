@@ -65,7 +65,7 @@
  
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga Awal</th>
 
@@ -75,7 +75,7 @@
 
             <th>Status</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -97,7 +97,7 @@
         
             <td>{{ $data->jenis_ikan }}</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->qty }} Kg</td>
 
             <td>Rp. {{ number_format($data->harga_awal) }}</td>
 

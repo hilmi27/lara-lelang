@@ -38,21 +38,48 @@
     <div class="row">
 
         <div class="col-md-6">
-
             <div class="all">
-
                 <div class="slider">
-
                     <div class="owl-carousel owl-theme main">
-
                         <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photo) }});" class="item-box"></div>
-
+                        @if (!empty($lelang->photoa))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photoa) }});" class="item-box"></div>
+                        @endif
+                        @if (!empty($lelang->photob))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photob) }});" class="item-box"></div>
+                        @endif
+                        @if (!empty($lelang->photoc))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photoc) }});" class="item-box"></div>
+                        @endif
+                        @if (!empty($lelang->photod))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photod) }});" class="item-box"></div>
+                        @endif
                     </div>
-
+                    <div class="left nonl"><i class="ti-angle-left"></i></div>
+                    <div class="right"><i class="ti-angle-right"></i></div>
                 </div>
-
+                <div class="slider-two">
+                    <div class="owl-carousel owl-theme thumbs">
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photo) }});" class="item active"></div>
+                        @if (!empty($lelang->photoa))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photoa) }});" class="item"></div>
+                        
+                        @endif
+                        
+                        @if (!empty($lelang->photob))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photob) }});" class="item"></div>
+                        @endif
+                        @if (!empty($lelang->photoc))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photoc) }});" class="item"></div>
+                        @endif
+                        @if (!empty($lelang->photod))
+                        <div style="background-image: url({{ asset('admin/lelang/'.$lelang->photod) }});" class="item"></div>
+                        @endif
+                    </div>
+                    <div class="left-t nonl-t"></div>
+                    <div class="right-t"></div>
+                </div>
             </div>
-
         </div>
 
         <div class="col-md-6">
@@ -143,7 +170,7 @@
 
                             <div class="btn_add_to_cart">
 
-                                <a href="{{ route('login') }}" class="btn_1">Hanya Member Yang Dapat Melakukan Bidding. Klik Disini Untuk Login Atau Register</a>
+                                <a href="{{ route('login') }}" class="btn_1">Hanya Member Yang Dapat Melakukan Penawaran. Klik Disini Untuk Masuk Atau Daftar</a>
 
                             </div>
 
@@ -225,7 +252,7 @@
 
                     <th>Username</th>
 
-                    <th>Bidding</th>
+                    <th>Penawaran</th>
 
                 </tr>
 

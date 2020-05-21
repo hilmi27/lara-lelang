@@ -128,11 +128,11 @@ class StaffController extends Controller
           
         if ($staff->save()) {
 
-            return redirect()->route('admin.staff')->with('success','Data staff berhasil diupdate');
+            return redirect()->route('admin.staff')->with('success','Data staff berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal ditambahkan');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }
@@ -153,7 +153,7 @@ class StaffController extends Controller
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal dipindahkan');
     
         }
 
@@ -171,9 +171,9 @@ class StaffController extends Controller
 
         if ($staff->trashed()) {
             $staff->restore();
-            return redirect()->route('admin.staff.trash')->with('success','Staff successfully restored');
+            return redirect()->route('admin.staff.trash')->with('success','Data staff berhasil direstore');
         }else {
-            return redirect()->route('admin.staff.trash')->with('error','Staff is not in trash');
+            return redirect()->route('admin.staff.trash')->with('error','Data staff tidak ditemukan');
         }
     }
 
@@ -183,13 +183,13 @@ class StaffController extends Controller
 
         if (!$staff->trashed()) {
         
-            return redirect()->route('admin.staff.trash')->with('error','Staff is not in trash');
+            return redirect()->route('admin.staff.trash')->with('error','Data staff tidak ditemukan');
         
         }else {
         
             $staff->forceDelete();
 
-            return redirect()->route('admin.staff.trash')->with('success','Staff permanently deleted');
+            return redirect()->route('admin.staff.trash')->with('success','Data staff berhasil dihapus permanen');
         }
     }
 }

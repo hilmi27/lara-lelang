@@ -119,6 +119,71 @@
 
         <div class="col-md-6 form-group">
 
+          <label for="photoa">Photo  </label><span>(*optional)</span>
+    
+          <input type="file" name="photoa" value="{{old('photoa')}}" class="form-control  {{$errors->first('photoa') ? "is-invalid" : ""}}"  id="photoa">
+    
+          <img src="{{ asset('admin/lelang/'.$lelang->photoa) }}" alt="" style="display: none">
+
+          <div class="invalid-feedback">
+    
+              {{$errors->first('photoa')}}
+    
+          </div>
+    
+        </div> 
+    
+        <div class="col-md-6 form-group">
+    
+          <label for="photob">Photo</label><span>(*optional)</span>
+    
+          <input type="file" name="photob" value="{{old('photob')}}" class="form-control  {{$errors->first('photob') ? "is-invalid" : ""}}"  id="photob">
+    
+          <img src="{{ asset('admin/lelang/'.$lelang->photob) }}" alt="" style="display: none">
+
+          <div class="invalid-feedback">
+    
+              {{$errors->first('photob')}}
+    
+          </div>
+    
+        </div> 
+    
+        <div class="col-md-6 form-group">
+    
+          <label for="photoc">Photo</label><span>(*optional)</span>
+    
+          <input type="file" name="photoc" value="{{old('photoc')}}" class="form-control  {{$errors->first('photoc') ? "is-invalid" : ""}}"  id="photoc" >
+    
+          <img src="{{ asset('admin/lelang/'.$lelang->photoc) }}" alt="" style="display: none">
+
+          <div class="invalid-feedback">
+    
+              {{$errors->first('photoc')}}
+    
+          </div>
+    
+        </div> 
+    
+        <div class="col-md-6 form-group">
+    
+          <label for="photod">Photo</label><span>(*optional)</span>
+    
+          <input type="file" name="photod" value="{{old('photod')}}" class="form-control  {{$errors->first('photod') ? "is-invalid" : ""}}"  id="photod">
+    
+          <img src="{{ asset('admin/lelang/'.$lelang->photod) }}" alt="" style="display: none">
+
+          <div class="invalid-feedback">
+    
+              {{$errors->first('photod')}}
+    
+          </div>
+    
+        </div> 
+
+
+        <div class="col-md-6 form-group">
+
           <label for="title">Title</label>
   
           <input type="text" name="title" value="{{old('title') ? old('title') : $lelang->title}}" class="form-control  {{$errors->first('title') ? "is-invalid" : ""}}"   id="title" placeholder="Masukkan Judul Lelang">
@@ -280,7 +345,7 @@
 
     <div class="card-footer">
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Simpan</button>
 
     </div>
 

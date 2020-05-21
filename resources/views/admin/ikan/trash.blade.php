@@ -46,18 +46,6 @@
   @endif
 
   <div class="card">
-
-    <div class="card-header">
-
-      <a href="{{ route('admin.ikan.create') }}" class="card-title">        
- 
-        <button type="button" class="btn btn-block btn-primary"><i class="fa fa-plus"></i>Tambah Data</button>
- 
-      </a>
- 
-    </div>
- 
-    <!-- /.card-header -->
  
     <div class="card-body">
  
@@ -69,9 +57,11 @@
  
             <th>No.</th>
  
+            <th>Photo</th>
+            
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga</th>
 
@@ -79,7 +69,7 @@
 
             <th>Wilayah</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -99,9 +89,13 @@
         
             <td>{{ ++$no }}</td>
         
+            <td>
+              <img src="{{ $data->photo ? asset('admin/ikan/'.$data->photo):'http://fulldubai.com/SiteImages/noimage.png'}}" alt="" height="100px" width="200px">
+            </td>
+            
             <td>{{ $data->jenis_ikan }}</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->qty }} Kg</td>
 
             <td>Rp. {{ number_format($data->harga) }}</td>
 
@@ -111,25 +105,23 @@
         
             <td>
         
-                <form method="POST" action="{{route('admin.ikan.restore', [$data->id])}}" class="d-inline">
+              <form method="POST" action="{{route('admin.ikan.restore', [$data->id])}}" class="d-inline">
                                     
-                    @csrf
-                    
-                    <input type="submit" value="Restore" class="btn btn-success btn-sm">
-                    
-                </form>
+                @csrf
+                
+                <input type="submit" value="Restore" class="btn btn-success btn-sm">
+                
+            </form>
 
-                <form method="POST" action="{{route('admin.ikan.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Delete this nelayan permanently?')">
+            <form method="POST" action="{{route('admin.ikan.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Apakah kamu yakin ingin menghapus data secara permanen ?')">
 
-                    @csrf
+                @csrf
 
-                        <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_method" value="DELETE">
 
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                    <input type="submit" value="Hapus Permanen" class="btn btn-danger btn-sm">
 
-                    </form>
-
-
+            </form>
             </td>
 
           </tr>
@@ -147,3 +139,8 @@
   </div>
 
   @endsection
+
+
+
+        
+                

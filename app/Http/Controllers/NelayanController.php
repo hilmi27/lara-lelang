@@ -117,11 +117,11 @@ class NelayanController extends Controller
           
         if ($nelayan->save()) {
 
-            return redirect()->route('admin.nelayan')->with('success','Data nelayan berhasil diupdate');
+            return redirect()->route('admin.nelayan')->with('success','Data nelayan berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }
@@ -142,7 +142,7 @@ class NelayanController extends Controller
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
 
@@ -160,9 +160,9 @@ class NelayanController extends Controller
 
         if ($nelayan->trashed()) {
             $nelayan->restore();
-            return redirect()->route('admin.nelayan.trash')->with('success','Nelayan successfully restored');
+            return redirect()->route('admin.nelayan.trash')->with('success','Data nelayan berhasil direstore');
         }else {
-            return redirect()->route('admin.nelayan.trash')->with('error','Nelayan is not in trash');
+            return redirect()->route('admin.nelayan.trash')->with('error','Data nelayan tidak ditemukan');
         }
     }
 
@@ -172,13 +172,13 @@ class NelayanController extends Controller
 
         if (!$nelayan->trashed()) {
         
-            return redirect()->route('admin.nelayan.trash')->with('error','Nelayan is not in trash');
+            return redirect()->route('admin.nelayan.trash')->with('error','Data nelayan tidak ditemukan');
         
         }else {
         
             $nelayan->forceDelete();
 
-            return redirect()->route('admin.nelayan.trash')->with('success','Nelayan permanently deleted');
+            return redirect()->route('admin.nelayan.trash')->with('success','Data nelayan berhasil dihapus permanen');
         }
     }
 

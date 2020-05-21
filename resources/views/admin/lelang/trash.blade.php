@@ -46,18 +46,6 @@
   @endif
 
   <div class="card">
-
-    <div class="card-header">
-
-      <a href="{{ route('admin.lelang.create') }}" class="card-title">        
- 
-        <button type="button" class="btn btn-block btn-primary"><i class="fa fa-plus"></i>Tambah Data</button>
- 
-      </a>
- 
-    </div>
- 
-    <!-- /.card-header -->
  
     <div class="card-body">
  
@@ -71,7 +59,7 @@
  
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga Awal</th>
 
@@ -79,7 +67,7 @@
 
             <th>Status</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -119,13 +107,13 @@
                     
                 </form>
 
-                <form method="POST" action="{{route('admin.lelang.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Delete this lelang permanently?')">
+                <form method="POST" action="{{route('admin.lelang.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Apakah kamu yakin ingin menghapus permanen ?')">
 
                     @csrf
 
                         <input type="hidden" name="_method" value="DELETE">
 
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Hapus Permanen" class="btn btn-danger btn-sm">
 
                     </form>
 

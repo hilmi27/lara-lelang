@@ -102,9 +102,9 @@ class BannersliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        \Validator::make($request->all(), [
-            "photo"=> "required",   
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "photo"=> "required",   
+        // ])->validate();
 
         $banner = Bannerslider::findOrFail($id);
         
@@ -135,11 +135,11 @@ class BannersliderController extends Controller
 
         if ($banner->save()) {
 
-            return redirect()->route('admin.banner')->with('success','Data banner berhasil diupdate');
+            return redirect()->route('admin.banner')->with('success','Data banner berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }

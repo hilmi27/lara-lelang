@@ -73,7 +73,7 @@
             
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga</th>
 
@@ -81,7 +81,7 @@
 
             <th>Wilayah</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -107,7 +107,7 @@
             
             <td>{{ $data->jenis_ikan }}</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->qty }} Kg</td>
 
             <td>Rp. {{ number_format($data->harga) }}</td>
 
@@ -117,17 +117,19 @@
         
             <td>
         
-              <a href="{{route('admin.ikan.lelang', [$data->id])}}" class="btn btn-success btn-sm"> Lelang</a>          
+              <a href="{{route('admin.ikan.lelang', [$data->id])}}" class="btn btn-success btn-sm"> Lelang</a>   
+              
+              <a href="{{route('admin.ikan.show', [$data->id])}}" class="btn btn-info btn-sm"> Lihat</a> 
 
               <a href="{{route('admin.ikan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
-              <form class="d-inline" action="{{route('admin.ikan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+              <form class="d-inline" action="{{route('admin.ikan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Apakah kamu yakin ?')">
 
                 @csrf 
          
                 <input type="hidden" value="DELETE" name="_method">
                 
-                <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                <input type="submit" class="btn btn-danger btn-sm" value="Hapus">
 
               </form>
 

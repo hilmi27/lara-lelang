@@ -18,7 +18,7 @@
   
         <div class="col-sm-6">
   
-          <h1 class="m-0 text-dark">Data Jenis Ikan</h1>
+          <h1 class="m-0 text-dark">Data Nelayan</h1>
   
         </div><!-- /.col -->
   
@@ -28,7 +28,7 @@
   
             <li class="breadcrumb-item"><a href="#">Home</a></li>
   
-            <li class="breadcrumb-item active">Data Jenis Ikan</li>
+            <li class="breadcrumb-item active">Data Nelayan</li>
   
           </ol>
   

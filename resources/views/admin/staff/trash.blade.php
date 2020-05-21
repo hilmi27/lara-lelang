@@ -47,18 +47,6 @@
 
   <div class="card">
 
-    <div class="card-header">
-
-      <a href="{{ route('admin.staff.create') }}" class="card-title">        
- 
-        <button type="button" class="btn btn-block btn-primary"><i class="fa fa-plus"></i>Tambah Data</button>
- 
-      </a>
- 
-    </div>
- 
-    <!-- /.card-header -->
- 
     <div class="card-body">
  
       <table id="example1" class="table table-bordered table-striped" >
@@ -77,7 +65,7 @@
 
             <th>Role</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -115,13 +103,13 @@
                     
                 </form>
 
-                <form method="POST" action="{{route('admin.staff.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Delete this nelayan permanently?')">
+                <form method="POST" action="{{route('admin.staff.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Apakah kamu yakin ingin menghapus permanen ?')">
 
                     @csrf
 
                         <input type="hidden" name="_method" value="DELETE">
 
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Hapus Permanen" class="btn btn-danger btn-sm">
 
                     </form>
 

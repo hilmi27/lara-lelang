@@ -12,7 +12,7 @@
   
         <div class="col-sm-6">
   
-          <h1 class="m-0 text-dark">Data Trash Nelayan</h1>
+          <h1 class="m-0 text-dark">Data Nelayan</h1>
   
         </div><!-- /.col -->
   
@@ -22,7 +22,7 @@
   
             <li class="breadcrumb-item"><a href="#">Home</a></li>
   
-            <li class="breadcrumb-item active">Data Trash</li>
+            <li class="breadcrumb-item active">Data Nelayan</li>
   
           </ol>
   
@@ -110,13 +110,13 @@
                     
                 </form>
 
-                <form method="POST" action="{{route('admin.nelayan.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Delete this nelayan permanently?')">
+                <form method="POST" action="{{route('admin.nelayan.delete-permanent', [$data->id])}}" class="d-inline" onsubmit="return confirm('Apakah kamu yakin ingin menghapus permanen ?')">
 
                     @csrf
 
                         <input type="hidden" name="_method" value="DELETE">
 
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Hapus Permanen" class="btn btn-danger btn-sm">
 
                     </form>
 

@@ -220,6 +220,38 @@ class LelangController extends Controller
        
         }   
 
+        if ($file = $request->file('photoa')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photoa'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photob')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photob'] = $name;
+       
+        } 
+        
+        if ($file = $request->file('photoc')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photoc'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photod')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photod'] = $name;
+       
+        }   
+
         if ($request->status == 'cancel') {
             $lelang_ = Lelang::where('id_ikan', $id_ikan)->value('qty');
             $ikan = Ikan::find($id_ikan);
@@ -230,14 +262,13 @@ class LelangController extends Controller
             // dd($ikan->id_ikan);
         }
         
-        // dd($lelang);
         if ($lelang->save()) {
 
-            return redirect()->route('admin.lelang')->with('success','Data lelang berhasil diupdate');
+            return redirect()->route('admin.lelang')->with('success','Data lelang berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }
@@ -276,9 +307,9 @@ class LelangController extends Controller
 
         if ($lelang->trashed()) {
             $lelang->restore();
-            return redirect()->route('admin.lelang.trash')->with('success','lelang successfully restored');
+            return redirect()->route('admin.lelang.trash')->with('success','Data lelang berhasil direstore');
         }else {
-            return redirect()->route('admin.lelang.trash')->with('error','lelang is not in trash');
+            return redirect()->route('admin.lelang.trash')->with('error','Data lelang tidak ditemukan');
         }
     }
 
@@ -288,13 +319,13 @@ class LelangController extends Controller
 
         if (!$lelang->trashed()) {
         
-            return redirect()->route('admin.lelang.trash')->with('error','lelang is not in trash');
+            return redirect()->route('admin.lelang.trash')->with('error','Data lelang tidak ditemukan');
         
         }else {
         
             $lelang->forceDelete();
 
-            return redirect()->route('admin.lelang.trash')->with('success','lelang permanently deleted');
+            return redirect()->route('admin.lelang.trash')->with('success','Data lelang berhasil dihapus permanen');
         }
     }
 

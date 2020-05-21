@@ -117,13 +117,13 @@
 
               <a href="{{route('admin.nelayan.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
-              <form class="d-inline" action="{{route('admin.nelayan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+              <form class="d-inline" action="{{route('admin.nelayan.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Apakah kamu yakin ?')">
 
                 @csrf 
          
                 <input type="hidden" value="DELETE" name="_method">
                 
-                <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                <input type="submit" class="btn btn-danger btn-sm" value="Hapus">
 
               </form>
 

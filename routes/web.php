@@ -121,6 +121,8 @@ Route::get('data-ikan/create','IkanController@create')->name('admin.ikan.create'
 
 Route::post('data-ikan/create','IkanController@store')->name('admin.ikan.store');
 
+Route::get('data-ikan/show/{id}','IkanController@show')->name('admin.ikan.show');
+
 Route::get('data-ikan/edit/{id}','IkanController@edit')->name('admin.ikan.edit');
 
 Route::post('data-ikan/edit/{id}','IkanController@update')->name('admin.ikan.update');

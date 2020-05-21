@@ -111,7 +111,63 @@
 
       <h6>Pilih Cover</h6>
 
-    </div>
+      </div>
+
+      <div class="col-md-6 form-group">
+
+        <label for="photoa">Photo  </label><span>(*optional)</span>
+  
+        <input type="file" name="photoa" value="{{old('photoa')}}" class="form-control  {{$errors->first('photoa') ? "is-invalid" : ""}}"  id="photoa">
+  
+        <div class="invalid-feedback">
+  
+            {{$errors->first('photoa')}}
+  
+        </div>
+  
+      </div> 
+  
+      <div class="col-md-6 form-group">
+  
+        <label for="photob">Photo</label><span>(*optional)</span>
+  
+        <input type="file" name="photob" value="{{old('photob')}}" class="form-control  {{$errors->first('photob') ? "is-invalid" : ""}}"  id="photob">
+  
+        <div class="invalid-feedback">
+  
+            {{$errors->first('photob')}}
+  
+        </div>
+  
+      </div> 
+  
+      <div class="col-md-6 form-group">
+  
+        <label for="photoc">Photo</label><span>(*optional)</span>
+  
+        <input type="file" name="photoc" value="{{old('photoc')}}" class="form-control  {{$errors->first('photoc') ? "is-invalid" : ""}}"  id="photoc" >
+  
+        <div class="invalid-feedback">
+  
+            {{$errors->first('photoc')}}
+  
+        </div>
+  
+      </div> 
+  
+      <div class="col-md-6 form-group">
+  
+        <label for="photod">Photo</label><span>(*optional)</span>
+  
+        <input type="file" name="photod" value="{{old('photod')}}" class="form-control  {{$errors->first('photod') ? "is-invalid" : ""}}"  id="photod">
+  
+        <div class="invalid-feedback">
+  
+            {{$errors->first('photod')}}
+  
+        </div>
+  
+      </div> 
 
       <div class="col-md-6 form-group">
 
@@ -254,7 +310,7 @@
 
     <div class="card-footer">
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Simpan</button>
 
     </div>
 

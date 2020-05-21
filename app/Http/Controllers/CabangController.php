@@ -110,11 +110,11 @@ class CabangController extends Controller
 
         if ($cabang->save()) {
 
-            return redirect()->route('admin.cabang')->with('success','Data cabang berhasil ditambahkan');
+            return redirect()->route('admin.cabang')->with('success','Data cabang berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal ditambahkan');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }

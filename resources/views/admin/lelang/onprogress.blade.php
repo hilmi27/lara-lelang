@@ -65,7 +65,7 @@
  
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga Awal</th>
 
@@ -73,7 +73,7 @@
 
             <th>Status</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  

@@ -14,7 +14,7 @@
     
     <div class="main_title">
 
-        <h2>Contact</h2>
+        <h2>Kontak Kami</h2>
 
     </div>
 
@@ -40,7 +40,7 @@
       
                 <i class="ti-map-alt"></i>
       
-                <h2>Office</h2>
+                <h2>Kantor Pusat</h2>
       
                 <div>{{ $gs->address }}</div>
       

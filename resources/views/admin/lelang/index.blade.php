@@ -47,7 +47,7 @@
 
   <div class="card">
 
-    <div class="card-header">
+    {{-- <div class="card-header">
 
       <a href="{{ route('admin.lelang.create') }}" class="card-title">        
  
@@ -55,7 +55,7 @@
  
       </a>
  
-    </div>
+    </div> --}}
  
     <!-- /.card-header -->
  
@@ -71,7 +71,7 @@
  
             <th>Jenis Ikan</th>
 
-            <th>Kuantitas</th>
+            <th>Jumlah</th>
 
             <th>Harga Awal</th>
 
@@ -79,7 +79,7 @@
 
             <th>Status</th>
  
-            <th>Action</th>
+            <th>Aksi</th>
  
           </tr>
  
@@ -101,7 +101,7 @@
         
             <td>{{ $data->jenis_ikan }}</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->qty }} Kg</td>
 
             <td>Rp. {{ number_format($data->harga_awal) }}</td>
 
@@ -111,17 +111,17 @@
         
             <td>
         
-              <a href="{{route('admin.lelang.show', [$data->id])}}" class="btn btn-info btn-sm"> Show</a>     
+              <a href="{{route('admin.lelang.show', [$data->id])}}" class="btn btn-info btn-sm"> Lihat</a>     
 
               <a href="{{route('admin.lelang.edit', [$data->id])}}" class="btn btn-info btn-sm"> Edit</a>                
             
-              <form class="d-inline" action="{{route('admin.lelang.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Are you sure ?')">
+              <form class="d-inline" action="{{route('admin.lelang.destroy', [$data->id])}}" method="POST" onsubmit="return confirm('Apakah kamu yakin ?')">
 
                 @csrf 
          
                 <input type="hidden" value="DELETE" name="_method">
                 
-                <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                <input type="submit" class="btn btn-danger btn-sm" value="Hapus">
 
               </form>
 

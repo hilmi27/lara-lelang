@@ -89,9 +89,9 @@ class WilayahController extends Controller
         $wilayah->nama = $request->nama;
 
         if ($wilayah->save()) {
-            return redirect()->route('admin.wilayah')->with('success','Data wilayah berhasil diupdate');
+            return redirect()->route('admin.wilayah')->with('success','Data wilayah berhasil diperbarui');
         } else {
-            return redirect()->back()->with('error','Data gagal ditambahkan');
+            return redirect()->back()->with('error','Data gagal diperbarui');
         }
     }
 

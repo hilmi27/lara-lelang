@@ -77,7 +77,40 @@ class IkanController extends Controller
            $file->move('admin/ikan',$name);           
            $ikan['photo'] = $name;
        
+        }  
+        
+        if ($file = $request->file('photoa')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photoa'] = $name;
+       
         }   
+
+        if ($file = $request->file('photob')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photob'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photoc')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photoc'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photod')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photod'] = $name;
+       
+        }   
+
 
         // dd($ikan);
         if ($ikan->save()) {
@@ -101,7 +134,12 @@ class IkanController extends Controller
      */
     public function show($id)
     {
-        //
+        $ikan = Ikan::findOrFail($id);
+
+        $jenis   = Jenisikan::all();
+        $wilayah = Wilayah::all();
+
+        return view('admin.ikan.show',compact('ikan','jenis','wilayah'));
     }
 
     /**
@@ -158,13 +196,45 @@ class IkanController extends Controller
        
         }   
 
+        if ($file = $request->file('photoa')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photoa'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photob')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photob'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photoc')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photoc'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photod')) 
+        {      
+           $name = "Ikan-".time().$file->getClientOriginalName();
+           $file->move('admin/ikan',$name);           
+           $ikan['photod'] = $name;
+       
+        }   
+
         if ($ikan->save()) {
 
-            return redirect()->route('admin.ikan')->with('success','Data ikan berhasil diupdate');
+            return redirect()->route('admin.ikan')->with('success','Data ikan berhasil diperbarui');
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
     }
@@ -219,6 +289,38 @@ class IkanController extends Controller
        
         }   
 
+        if ($file = $request->file('photoa')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photoa'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photob')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photob'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photoc')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photoc'] = $name;
+       
+        }   
+
+        if ($file = $request->file('photod')) 
+        {      
+           $name = "Lelang-".time().$file->getClientOriginalName();
+           $file->move('admin/lelang',$name);           
+           $lelang['photod'] = $name;
+       
+        }   
+
         if ($lelang->save()) {
 
             $lelang_ = Lelang::where('id_ikan', $id_ikan)->get()->sum('qty');
@@ -264,9 +366,9 @@ class IkanController extends Controller
 
         if ($ikan->trashed()) {
             $ikan->restore();
-            return redirect()->route('admin.ikan.trash')->with('success','Ikan successfully restored');
+            return redirect()->route('admin.ikan.trash')->with('success','Data ikan berhasil direstore');
         }else {
-            return redirect()->route('admin.ikan.trash')->with('error','Ikan is not in trash');
+            return redirect()->route('admin.ikan.trash')->with('error','Data ikan tidak ditemukan');
         }
     }
 
@@ -276,13 +378,13 @@ class IkanController extends Controller
 
         if (!$ikan->trashed()) {
         
-            return redirect()->route('admin.ikan.trash')->with('error','Ikan is not in trash');
+            return redirect()->route('admin.ikan.trash')->with('error','Data ikan tidak ditemukan');
         
         }else {
         
             $ikan->forceDelete();
 
-            return redirect()->route('admin.ikan.trash')->with('success','Ikan permanently deleted');
+            return redirect()->route('admin.ikan.trash')->with('success','Data ikan berhasil dihapus permanen');
         }
     }
 

@@ -60,7 +60,7 @@
 
       <div class="form-group">
 
-        <label for="name">Name</label>
+        <label for="name">Nama</label>
 
         <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama jenis ikan">
 
@@ -72,7 +72,7 @@
 
     <div class="card-footer">
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Simpan</button>
 
     </div>
 

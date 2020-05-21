@@ -178,7 +178,7 @@
          
                         </div>
 
-                        <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
+                        <div class="text-center"><input type="submit" value="Daftar" class="btn_1 full-width"></div>
 
                     </form>
 

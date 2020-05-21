@@ -101,9 +101,9 @@
 
             <td>{{ $data->kualitas }}</td>
 
-            <td>{{ $data->qty_awal }}</td>
+            <td>{{ $data->qty_awal }} Kg</td>
 
-            <td>{{ $data->qty }}</td>
+            <td>{{ $data->qty }} Kg</td>
 
             <td>Rp. {{ number_format($data->harga) }}</td>
 

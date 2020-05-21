@@ -751,7 +751,7 @@
      
                                     <p>
      
-                                        Setting
+                                        Pengaturan
      
                                         <i class="right fas fa-angle-left"></i>
      
@@ -801,7 +801,7 @@
       
                                     <p>
       
-                                        Report
+                                        Laporan
       
                                         <i class="fas fa-angle-left right"></i>
       
@@ -887,7 +887,7 @@
       
                                     <p>
       
-                                        Logout
+                                        Keluar
       
                                     </p>
       

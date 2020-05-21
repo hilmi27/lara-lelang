@@ -56,7 +56,7 @@
           
           </div>
           
-          <a href="{{ route('admin.ikan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.ikan') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
           
         </div>
         
@@ -80,7 +80,7 @@
 
           </div>
 
-          <a href="{{ route('admin.lelang') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.lelang') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
 
         </div>
 
@@ -104,7 +104,7 @@
 
           </div>
 
-          <a href="{{ route('admin.staff') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.staff') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
 
         </div>
 
@@ -128,7 +128,7 @@
 
           </div>
 
-          <a href="{{ route('admin.nelayan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.nelayan') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
 
         </div>
 

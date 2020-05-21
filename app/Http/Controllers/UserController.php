@@ -141,7 +141,7 @@ class UserController extends Controller
     
         } else {
     
-            return redirect()->back()->with('error','Data gagal diupdate');
+            return redirect()->back()->with('error','Data gagal diperbarui');
     
         }
 
@@ -159,9 +159,9 @@ class UserController extends Controller
 
         if ($user->trashed()) {
             $user->restore();
-            return redirect()->route('admin.user.trash')->with('success','User successfully restored');
+            return redirect()->route('admin.user.trash')->with('success','Data berhasil direstore');
         }else {
-            return redirect()->route('admin.user.trash')->with('error','User is not in trash');
+            return redirect()->route('admin.user.trash')->with('error','Data tidak ditemukan');
         }
     }
 
@@ -171,13 +171,13 @@ class UserController extends Controller
 
         if (!$user->trashed()) {
         
-            return redirect()->route('admin.user.trash')->with('error','User is not in trash');
+            return redirect()->route('admin.user.trash')->with('error','Data tidak ditemukan');
         
         }else {
         
             $user->forceDelete();
 
-            return redirect()->route('admin.user.trash')->with('success','User permanently deleted');
+            return redirect()->route('admin.user.trash')->with('success','Data berhasil dihapus permanen');
         }
     }
 }
